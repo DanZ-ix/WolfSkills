@@ -13,14 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', function () {return view('home');})->name('home'); 
 
-Route::get('/about', function () {
-    return view('about');
-});
+/*пишите неймы для роутов, ->name('home')
+что бы потом на фронте, писать в <a href="ссылка">
+не тупо адрес, а указание на роут {{route('home')}}
 
-Route::get('/contacts', function () {
-    return view('contacts');
-});
+т.е:
+<a href="{{route('home')}}"> и оно само будет ставить ссылку, даже если её тут поменяют
+
+*/
+
+Route::get('/about', function () {return view('about');})->name('about');
+
+Route::get('/contacts', function () {return view('contacts');})->name('contacts');
+
+Route::get('/profile', function () {return view('profile');})->name('profile');
