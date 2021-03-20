@@ -2,12 +2,11 @@
 
 
 @section('title')
-    <p>Хуй соси лижи залупу kakat' v rotik</p>
+    Контакты
 @endsection
-<br>
-<a href="/">Домой</a>
+
 
 
 @section('content')
-<h1>Contacts</h1>
+<h1 style="text-align: center;">Контакты</h1>
 @endsection
