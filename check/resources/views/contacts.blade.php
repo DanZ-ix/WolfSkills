@@ -2,7 +2,7 @@
 
 
 @section('title')
-    Хуй соси
+    <p>Хуй соси</p>
 @endsection
 <br>
 <a href="/">Домой</a>
