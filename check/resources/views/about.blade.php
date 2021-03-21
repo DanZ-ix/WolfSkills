@@ -1,12 +1,10 @@
 @extends("layouts.app")
 
 @section('title')
-    Губой тряси
+    О нас
 @endsection
 
-<br>
-<a href="/">Домой</a>
 
 @section('content')
-<h1>About</h1>
+<h1 style="text-align: center;">О нас</h1>
 @endsection

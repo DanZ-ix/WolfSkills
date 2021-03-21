@@ -2,17 +2,11 @@
 
 
 @section('title')
-    Волки ебатт
+    Главная страница
 @endsection
 
 @section('content')
-<h1>Главная страница</h1>
-<a href="contacts">Контакты</a>
-<br>
-<a href="about">О нас</a>
+<h1 style="text-align: center;">Главная страница</h1>
 @endsection
 
-@section('aside')
-    @parent
-    <p>Dop txt</p>
-@endsection
+

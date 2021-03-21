@@ -20,16 +20,18 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="home">Главная<span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="contacts">Контакты</a>
-      <a class="nav-item nav-link" href="#">О нас</a>
-      <a class="nav-item nav-link" href="profile">Личный кабинет</a>
+      <a class="nav-item nav-link active" href="{{route('home')}}">Главная<span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="{{route('contacts')}}">Контакты</a>
+      <a class="nav-item nav-link" href="{{route('about')}}">О нас</a>
+      <a class="nav-item nav-link" href="{{route('profile')}}">Личный кабинет</a>
+      <a class="nav-item nav-link" href="{{route('login')}}">Логин</a>
     </div>
   </div>
 </nav>
 </header>
+<section style="width: 75%; margin-left: auto; margin-right: auto;">
 @yield('content')
 
-@include('inc.aside')
+</section>
 </body>
 </html>
