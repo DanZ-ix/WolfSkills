@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}"> <!-- корневой файл app css -->
     <link rel="stylesheet" href= "{{ asset('/css/bootstrap.css') }}"> <!-- для работы бутстрапа -->
+    <link rel="stylesheet" href= "{{ asset('/css/main.css') }}"> 
     <script src="{{ asset('/js/app.js') }}"></script> <!-- корневой файл app js -->
     <script src="{{ asset('/js/bootstrap.js') }}"></script> <!-- бутстраповский джиэс -->
     <title>@yield('title')</title>
