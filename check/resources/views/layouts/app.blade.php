@@ -15,7 +15,8 @@
 <body>
 <header>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">WOLFSKILLS</a>
+
+  <a class="navbar-brand" href="#"><img src="content\images\profiles\tvoieblet.jpg" style=  "vertical-align: middle; border-radius: 20px; width:25px; height:100%;">WOLFSKILLS</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
