@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}"> <!-- корневой файл app css -->
     <link rel="stylesheet" href= "{{ asset('/css/bootstrap.css') }}"> <!-- для работы бутстрапа -->
+    <link rel="stylesheet" href= "{{ asset('/css/main.css') }}"> 
     <script src="{{ asset('/js/app.js') }}"></script> <!-- корневой файл app js -->
     <script src="{{ asset('/js/bootstrap.js') }}"></script> <!-- бутстраповский джиэс -->
     <title>@yield('title')</title>
@@ -14,7 +15,8 @@
 <body>
 <header>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">WOLFSKILLS</a>
+
+  <a class="navbar-brand" href="#">W<img src="content\images\profiles\tvoieblet.jpg" style=  "vertical-align: middle; border-radius: 20px; width:25px; height:100%;">LFSKILLS</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
