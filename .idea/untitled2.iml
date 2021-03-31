@@ -112,8 +112,8 @@
       <excludeFolder url="file://$MODULE_DIR$/check/vendor/symfony/console" />
       <excludeFolder url="file://$MODULE_DIR$/check/vendor/symfony/translation-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/check/vendor/symfony/polyfill-iconv" />
-      <excludeFolder url="file://$MODULE_DIR$/check/vendor/symfony/polyfill-intl-grapheme" />
       <excludeFolder url="file://$MODULE_DIR$/check/vendor/symfony/polyfill-intl-normalizer" />
+      <excludeFolder url="file://$MODULE_DIR$/check/vendor/symfony/polyfill-intl-grapheme" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
