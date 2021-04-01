@@ -10,30 +10,36 @@
 @section('content')
 <h1 style="text-align: center;">Контакты</h1>
 
-<div class="container">
-  <div style="text-align:center">
-    
-    <p>Swing by for a cup of coffee, or leave us a message:</p>
-  </div>
+<div style="margin-left: 40%; margin-right: auto; text-align: center;" class="container"> 
   <div class="row">
     <div class="column">
       <div id="map" style="width:100%;height:500px"></div>
     </div>
     <div class="column">
       <form action="{{ route('home') }}">
-        <h3><label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your name.."></h3>
-        <h3><label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" placeholder="Your last name.."></h3>
-        <label for="country">Country</label>
-        <select id="country" name="country">
-          <option value="australia">Australia</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
+
+
+      <div class="form-group">
+    <label for="exampleFirstName">Имя</label>
+    <input type="FirstName" class="form-control" id="exampleInputFirstName" aria-describedby="FirstNameHelp" placeholder="Введите имя">
+  </div>
+  <div class="form-group">
+    <label for="exampleLastName">Электронная почта</label>
+    <input type="LastName" class="form-control" id="exampleLastName" aria-describedby="LastNameHelp" placeholder="Введите Фамилию">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Выберите страну</label>
+    <select id="country" name="country">
+          <option value="australia">РАСИЯ</option>
+          <option value="canada">Рашн Федерейшон</option>
+          <option value="usa">Рашка йобаная</option>
         </select>
-        <label for="subject">Subject</label>
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:50px"></textarea>
-        <input type="submit" value="Submit">
+  </div>
+  <h3>
+  <textarea type="LastName" class="form-control" id="exampleLastName" aria-describedby="LastNameHelp" placeholder="Напиши злой отзыв, пидрила"></textarea>
+  </h3>
+  
+  <button type="submit" class="btn btn-primary">Отправить нам в жопу</button>
       </form>
     </div>
   </div>
