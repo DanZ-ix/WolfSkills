@@ -21,7 +21,6 @@
       <path value="$PROJECT_DIR$/check/vendor/symfony/console" />
       <path value="$PROJECT_DIR$/check/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/check/vendor/symfony/polyfill-iconv" />
-      <path value="$PROJECT_DIR$/check/vendor/symfony/polyfill-intl-grapheme" />
       <path value="$PROJECT_DIR$/check/vendor/symfony/polyfill-intl-normalizer" />
       <path value="$PROJECT_DIR$/check/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/check/vendor/phpdocumentor/reflection-docblock" />
@@ -108,6 +107,7 @@
       <path value="$PROJECT_DIR$/check/vendor/symfony/translation" />
       <path value="$PROJECT_DIR$/check/vendor/symfony/service-contracts" />
       <path value="$PROJECT_DIR$/check/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/check/vendor/symfony/polyfill-intl-grapheme" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1">

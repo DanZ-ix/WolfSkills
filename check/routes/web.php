@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {return view('home');})->name('home'); 
+Route::get('/', function () {return view('home');})->name('home');
 
 /*пишите неймы для роутов, ->name('home')
 что бы потом на фронте, писать в <a href="ссылка">
@@ -32,4 +32,32 @@ Route::get('/contacts', function () {return view('contacts');})->name('contacts'
 
 Route::get('/profile', function () {return view('profile');})->name('profile');
 
-Route::get('/register', function () {return view('register');})->name('register');
+Route::name('user.')->group(function()
+{
+    Route::view('/lk', 'lk')->middleware('auth')->name('lk');
+
+    Route::get('/loginCH', function()
+    {
+        if (Auth::check())
+        {
+            return redirect(route('lk'));
+        }
+        return view('loginCH');
+    })->name('login_check');
+
+    //Route::post('/loginCH', []);
+
+    //Route::get('/logout', [])->name('logout');
+
+    Route::get('/register', function()
+    {
+        if (Auth::check())
+        {
+            return redirect(route('lk'));
+        }
+        return view('register');
+    })->name('register');
+
+    //Route::post('/register', []);
+});
+
