@@ -9,6 +9,10 @@
 @section('content')
 <h1 style="text-align: center;">Регистрация</h1>
 <form>
+<div class="form-group">
+    <label for="exampleInputNickname">Nickname</label>
+    <input type="nickname" class="form-control" id="exampleInputNickname" aria-describedby="nicknameHelp" placeholder="Введите nickname">
+  </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Электронная почта</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите e-mail">
@@ -17,6 +21,6 @@
     <label for="exampleInputPassword1">Пароль</label>
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Пароль">
   </div>
-  <button type="submit" class="btn btn-primary">Войти</button>
+  <button type="submit" class="btn btn-primary">Создать</button>
 </form>
 @endsection

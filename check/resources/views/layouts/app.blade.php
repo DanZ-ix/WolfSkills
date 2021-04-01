@@ -27,7 +27,7 @@
       <a class="nav-item nav-link" href="{{route('about')}}">О нас</a>
       <a class="nav-item nav-link" href="{{route('profile')}}">Личный кабинет</a>
       <a class="nav-item nav-link" href="{{route('login')}}">Логин</a>
-      <a class="nav-item nav-link" href="{{route('login')}}">Регистрация</a>
+      <a class="nav-item nav-link" href="{{route('register')}}">Регистрация</a>
     </div>
   </div>
 </nav>
