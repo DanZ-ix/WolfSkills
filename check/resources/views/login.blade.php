@@ -1,5 +1,10 @@
 @extends("layouts.app")
 
+@section('meta')
+    <meta name="csrf-token" content="'{{ csrf_token() }}">
+@endsection
+
+
 @section('title')
     Логин
 @endsection
@@ -8,14 +13,21 @@
 
 @section('content')
 <h1 style="text-align: center;">Логин</h1>
-<form>
+<form method="POST" action="{{ route('user.login_check') }}">
+    @csrf
   <div class="form-group">
     <label for="exampleInputEmail1">Электронная почта</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите e-mail">
+      @error('email')
+      <div class="alert alert alert-danger"> {{ $message }}</div>
+      @enderror
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Пароль</label>
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Пароль">
+      @error('password')
+      <div class="alert alert alert-danger"> {{ $message }}</div>
+      @enderror
   </div>
   <button type="submit" class="btn btn-primary">Войти</button>
 </form>
