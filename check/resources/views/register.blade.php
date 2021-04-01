@@ -8,7 +8,18 @@
 
 @section('content')
 <h1 style="text-align: center;">Регистрация</h1>
+
 <form>
+<h2 style="text-align: center;">
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> Я заказчик
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Я исполнитель
+  </label>
+</div>
+</h2>
 <div class="form-group">
     <label for="exampleInputNickname">Nickname</label>
     <input type="nickname" class="form-control" id="exampleInputNickname" aria-describedby="nicknameHelp" placeholder="Введите nickname">
