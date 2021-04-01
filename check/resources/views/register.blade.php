@@ -9,7 +9,8 @@
 @section('content')
 <h1 style="text-align: center;">Регистрация</h1>
 
-<form>
+<form method="POST" action="{{ route('user.register') }}">
+    @csrf
 <h2 style="text-align: center;">
 <div class="btn-group btn-group-toggle" data-toggle="buttons">
   <label class="btn btn-secondary active">
@@ -23,14 +24,21 @@
 <div class="form-group">
     <label for="exampleInputNickname">Nickname</label>
     <input type="nickname" class="form-control" id="exampleInputNickname" aria-describedby="nicknameHelp" placeholder="Введите nickname">
+
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Электронная почта</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите e-mail">
+      @error('email')
+      <div class="alert alert alert-danger"> {{ $message }}</div>
+      @enderror
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Пароль</label>
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Пароль">
+      @error('password')
+      <div class="alert alert alert-danger"> {{ $message }}</div>
+      @enderror
   </div>
   <button type="submit" class="btn btn-primary">Создать</button>
 </form>

@@ -58,6 +58,6 @@ Route::name('user.')->group(function()
         return view('register');
     })->name('register');
 
-    //Route::post('/register', []);
+    Route::post('/register', [\App\Http\Controllers\RegisterController::class, 'save ']);
 });
 
