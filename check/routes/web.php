@@ -26,7 +26,7 @@ Route::get('/', function () {return view('home');})->name('home');
 
 Route::get('/about', function () {return view('about');})->name('about');
 
-Route::get('/login', function () {return view('login');})->name('login');
+//Route::get('/login', function () {return view('login');})->name('login');
 
 Route::get('/contacts', function () {return view('contacts');})->name('contacts');
 
@@ -36,27 +36,33 @@ Route::name('user.')->group(function()
 {
     Route::view('/lk', 'lk')->middleware('auth')->name('lk');
 
-    Route::get('/loginCH', function()
+    Route::get('/login', function()
     {
         if (Auth::check())
         {
             return redirect(route('lk'));
         }
-        return view('loginCH');
-    })->name('login_check');
+        return view('login');
+    })->name('login');
 
-    //Route::post('/loginCH', []);
+    Route::post('/login', [\App\Http\Controllers\LoginController::class, 'login']);
 
-    //Route::get('/logout', [])->name('logout');
+    Route::get('/logout', function()
+    {
+        Auth::logout();
+        return redirect('/about');
+    }
+    )->name('logout');
 
     Route::get('/register', function()
     {
         if (Auth::check())
         {
-            return redirect(route('lk'));
+            return redirect(route('user.lk'));
         }
         return view('register');
     })->name('register');
+
 
     Route::post('/register', [\App\Http\Controllers\RegisterController::class, 'save']);
 });

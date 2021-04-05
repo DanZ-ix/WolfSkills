@@ -16,11 +16,20 @@ class RegisterController extends Controller
         {
             return redirect()->to(route('user.lk'));
         }
-
+        //dd($request);
         $validateFields = $request->validate([
                 'email' => ['required', 'email'],
-                'password' => 'required'
+                'password' => 'required',
+                'nickname' => 'required',
+                'role' => 'required'
             ]);
+
+        if(User::where('email', $validateFields['email'])->exists())
+        {
+            redirect()->to(route('user.register'))->withErrors([
+                'formError' => 'Такой пользователь уже существует']);
+        }
+
 
         $user = User::create($validateFields);
         if ($user)
@@ -28,7 +37,7 @@ class RegisterController extends Controller
             Auth::login($user);
             return redirect()->to(route('user.lk'));
         }
-        return redirect()->to(route('login'))->withErrors([
+        return redirect()->to(route('user.register'))->withErrors([
             'formError' => 'Произошла ошибка при сохранении пользователя'
         ]);
     }

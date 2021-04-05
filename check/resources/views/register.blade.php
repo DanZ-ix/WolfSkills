@@ -11,39 +11,41 @@
 
 <form method="POST" action="{{ route('user.register') }}">
     @csrf
-    <!--
+
 <h2 style="text-align: center;">
 <div class="btn-group btn-group-toggle" data-toggle="buttons">
   <label class="btn btn-secondary active">
-    <input type="radio" name="options" id="option1" autocomplete="off" checked> Я заказчик
+      <input type="radio" name="role" id="option2" value="Isp" autocomplete="on" checked> Я исполнитель
   </label>
   <label class="btn btn-secondary">
-    <input type="radio" name="options" id="option2" autocomplete="off"> Я исполнитель
+
+      <input type="radio" name="role" id="option1" value="Zakaz" autocomplete="on" > Я заказчик
   </label>
 </div>
 </h2>
--->
-        <!--
+
+
 <div class="form-group">
-    <label for="exampleInputNickname">Nickname</label>
-    <input type="nickname" class="form-control" id="exampleInputNickname" aria-describedby="nicknameHelp" placeholder="Введите nickname">
+    <label for="nickname">Nickname</label>
+    <input type="text" class="form-control" id="nickname" name="nickname" aria-describedby="nicknameHelp" value="" placeholder="Введите nickname">
 
   </div>
-  -->
+
+        <div class="form-group">
+            <label for="email">Электронная почта</label>
+            <input type="email" class="form-control" id="email" name="email" value="" placeholder="email">
+            @error('email')
+            <div class="alert alert alert-danger"> {{ $message }}</div>
+            @enderror
+        </div>
+
   <div class="form-group">
-    <label for="exampleInputEmail1">Электронная почта</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите e-mail">
-      @error('email')
-      <div class="alert alert alert-danger"> {{ $message }}</div>
-      @enderror
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Пароль</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Пароль">
+    <label for="password">Пароль</label>
+    <input type="password" class="form-control" id="password" name="password" value="" placeholder="Пароль">
       @error('password')
       <div class="alert alert alert-danger"> {{ $message }}</div>
       @enderror
   </div>
-  <button type="submit" class="btn btn-primary">Создать</button>
+  <button type="submit" class="btn btn-lg byn-primary" name="sendMe" value="1">Создать</button>
 </form>
 @endsection
