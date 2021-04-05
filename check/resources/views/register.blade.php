@@ -11,6 +11,7 @@
 
 <form method="POST" action="{{ route('user.register') }}">
     @csrf
+    <!--
 <h2 style="text-align: center;">
 <div class="btn-group btn-group-toggle" data-toggle="buttons">
   <label class="btn btn-secondary active">
@@ -21,11 +22,14 @@
   </label>
 </div>
 </h2>
+-->
+        <!--
 <div class="form-group">
     <label for="exampleInputNickname">Nickname</label>
     <input type="nickname" class="form-control" id="exampleInputNickname" aria-describedby="nicknameHelp" placeholder="Введите nickname">
 
   </div>
+  -->
   <div class="form-group">
     <label for="exampleInputEmail1">Электронная почта</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите e-mail">

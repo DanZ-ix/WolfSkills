@@ -20,9 +20,9 @@ class UserTable extends Migration
             $table->string('password', 255)->nullable(false);
             $table->string('remember_token', 100)->nullable(true);
             $table->string('nickname', 25)->nullable(false);
-            $table->string('role', 20)->nullable(false);
-            $table->float('stars')->nullable(true);
-            $table->integer('rating')->nullable(true);
+            //$table->string('role', 20)->nullable(false);
+            //$table->float('stars')->nullable(true);
+            //$table->integer('rating')->nullable(true);
             $table->timestamps();
 
         });
@@ -35,6 +35,6 @@ class UserTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('users');
     }
 }
