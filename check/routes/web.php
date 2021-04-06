@@ -30,17 +30,17 @@ Route::get('/about', function () {return view('about');})->name('about');
 
 Route::get('/contacts', function () {return view('contacts');})->name('contacts');
 
-Route::get('/profile', function () {return view('profile');})->name('profile');
+
 
 Route::name('user.')->group(function()
 {
-    Route::view('/lk', 'lk')->middleware('auth')->name('lk');
+    Route::view('/lk', 'profile')->middleware('auth')->name('lk');
 
     Route::get('/login', function()
     {
         if (Auth::check())
         {
-            return redirect(route('lk'));
+            return redirect(route('user.lk'));
         }
         return view('login');
     })->name('login');
@@ -50,7 +50,7 @@ Route::name('user.')->group(function()
     Route::get('/logout', function()
     {
         Auth::logout();
-        return redirect('/about');
+        return redirect(route('home'));
     }
     )->name('logout');
 

@@ -26,10 +26,13 @@
       <a class="nav-item nav-link active" href="{{route('home')}}">Главная<span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="{{route('contacts')}}">Контакты</a>
       <a class="nav-item nav-link" href="{{route('about')}}">О нас</a>
-      <a class="nav-item nav-link" href="{{route('profile')}}">Личный кабинет</a>
+        @if(\Illuminate\Support\Facades\Auth::check())
+      <a class="nav-item nav-link" href="{{route('user.lk')}}">Личный кабинет</a>
+            <a class="nav-item nav-link" href="{{route('user.logout')}}">Выйти</a>
+        @else
       <a class="nav-item nav-link" href="{{route('user.login')}}">Логин</a>
       <a class="nav-item nav-link" href="{{route('user.register')}}">Регистрация</a>
-        <a class="nav-item nav-link" href="{{route('user.logout')}}">Выйти</a>
+        @endif
     </div>
   </div>
 </nav>

@@ -1,6 +1,6 @@
 @extends("layouts.app")
 
-ч
+
 @section('title')
     Главная страница
 @endsection
