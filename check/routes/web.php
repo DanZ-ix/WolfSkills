@@ -31,6 +31,17 @@ Route::get('/about', function () {return view('about');})->name('about');
 Route::get('/contacts', function () {return view('contacts');})->name('contacts');
 
 
+Route::name('orders.')->group(function()
+{
+
+    Route::view('/order_list', 'order_list')->middleware('auth')->name(('order_list'));
+    Route::view('/order', 'order')->middleware('auth')->name(('order'));
+
+    Route::post('/order_submit', [\App\Http\Controllers\OrderController::class, 'submit'])->name('order_submit');
+
+});
+
+
 
 Route::name('user.')->group(function()
 {
