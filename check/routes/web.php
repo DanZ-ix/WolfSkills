@@ -2,16 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {return view('home');})->name('home');
 
@@ -26,23 +16,19 @@ Route::get('/', function () {return view('home');})->name('home');
 
 Route::get('/about', function () {return view('about');})->name('about');
 
-//Route::get('/login', function () {return view('login');})->name('login');
-
 Route::get('/contacts', function () {return view('contacts');})->name('contacts');
 
 
-Route::name('orders.')->group(function()
-{
+//ЗАКАЗЫ
+Route::get('/order', function () {return view('order');})->middleware('auth')->name(('order'));
 
-    Route::view('/order_list', 'order_list')->middleware('auth')->name(('order_list'));
-    Route::view('/order', 'order')->middleware('auth')->name(('order'));
+Route::get('/order_list', function () {return view('order_list');})->middleware('auth')->name(('order_list'));
 
-    Route::post('/order_submit', [\App\Http\Controllers\OrderController::class, 'submit'])->name('order_submit');
-
-});
+Route::post('/order_submit', [\App\Http\Controllers\OrderController::class, 'submit'])->name('order_submit');
 
 
 
+//РЕГИСТРАЦИЯ И ЛОГИН
 Route::name('user.')->group(function()
 {
     Route::view('/lk', 'profile')->middleware('auth')->name('lk');

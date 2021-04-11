@@ -28,8 +28,8 @@
       <a class="nav-item nav-link" href="{{route('about')}}">О нас</a>
         @if(\Illuminate\Support\Facades\Auth::check())
       <a class="nav-item nav-link" href="{{route('user.lk')}}">Личный кабинет</a>
-            <a class="nav-item nav-link" href="{{route('orders.order')}}">Разместить заказ</a>
-            <a class="nav-item nav-link" href="{{route('orders.order_list')}}">Заказы</a>
+            <a class="nav-item nav-link" href="{{route('order')}}">Разместить заказ</a>
+            <a class="nav-item nav-link" href="{{route('order_list')}}">Заказы</a>
             <a class="nav-item nav-link" href="{{route('user.logout')}}">Выйти</a>
         @else
       <a class="nav-item nav-link" href="{{route('user.login')}}">Логин</a>

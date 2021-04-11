@@ -20,8 +20,8 @@ class Orders extends Migration
             $table->string('napravlenie', 255)->nullable(false);
             $table->text('opisanie')->nullable(false);
             $table->string('telephone', 255)->nullable(false);
-            $table->string('deadline', 100)->nullable(false);
-            $table->string('cost', 50)->nullable(true);
+            $table->string('deadline', 255)->nullable(false);
+            $table->string('cost', 255)->nullable(true);
 
             $table->timestamps();
 
