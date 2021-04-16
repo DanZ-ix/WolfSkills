@@ -12,20 +12,14 @@
 
 @section('content')
     <h1 style="text-align: center;">Разместить заказ</h1>
-
-    <div  style="text-align: center;" class="container">
-        <div  style="text-align: center;" class="row">
-            <div class="column">
-                <!--<div id="map" style="width: 100%;height:500px"></div>-->
-            </div>
-            <div class="column">
-
-                    <form method="POST" action="{{ route('order_submit') }}">
+    <form method="POST" action="{{ route('user.register') }}">
+    @csrf
+    <form method="POST" action="{{ route('order_submit') }}">
                             @csrf
 
                         <div class="form-group">
                             <label>Название задания</label>
-                            <input name="title" value="" class="form-control" autocomplete="off"  placeholder="Название задания">
+                            <input name="title" value="" class="form-control"   placeholder="Название задания">
                             @error('title')
                             <div class="alert alert alert-danger"> {{ $message }}</div>
                             @enderror
@@ -77,11 +71,16 @@
                         <h1></h1>
                         <br>
                         <h1></h1>
+
+
+
+
+                        
                     </form>
 
-            </div>
-        </div>
-    </div>
+
+
+
 @endsection
 
 
