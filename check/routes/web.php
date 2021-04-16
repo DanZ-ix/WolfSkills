@@ -26,7 +26,7 @@ Route::get('/order_list', function () {return view('order_list');})->middleware(
 
 Route::post('/order_submit', [\App\Http\Controllers\OrderController::class, 'submit'])->name('order_submit');
 
-
+Route::get('/error',  function () {return view('error');})->name('error');
 
 //РЕГИСТРАЦИЯ И ЛОГИН
 Route::name('user.')->group(function()

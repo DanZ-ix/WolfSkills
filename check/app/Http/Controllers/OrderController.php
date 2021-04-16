@@ -5,11 +5,23 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
     public function submit(Request $request)
     {
+        if (!Auth::check())
+        {
+            return redirect()->to(route('error'));
+        }
+        $user = Auth::user();
+
+        if ($user['role']=='Isp')
+        {
+            return redirect()->to(route('error'));
+        }
+
 
         $validateFields = $request->validate([
             'title' => ['required', 'max:254'],
