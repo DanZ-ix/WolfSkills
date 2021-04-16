@@ -16,7 +16,7 @@ class RegisterController extends Controller
         {
             return redirect()->to(route('user.lk'));
         }
-        //dd($request);
+        //
         $validateFields = $request->validate([
                 'email' => ['required', 'email'],
                 'password' => 'required',
@@ -24,6 +24,7 @@ class RegisterController extends Controller
                 'role' => 'required'
             ]);
 
+        //dd($request);
         if(User::where('email', $validateFields['email'])->exists())
         {
             redirect()->to(route('user.register'))->withErrors([
@@ -31,9 +32,18 @@ class RegisterController extends Controller
         }
 
 
-        $user = User::create($validateFields);
+        $user = User::create([
+            'nickname' => $validateFields['nickname'],
+            'email' => $validateFields['email'],
+            'password' => $validateFields ['password'],
+            'role' => $validateFields['role'],
+            'stars' => 0,
+            'rating' => 0
+            ]);
+            //$validateFields);
         if ($user)
         {
+
             Auth::login($user);
             return redirect()->to(route('user.lk'));
         }

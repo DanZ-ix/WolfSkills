@@ -14,9 +14,9 @@
     <h1 style="text-align: center;">Разместить заказ</h1>
 
     <div  style="text-align: center;" class="container">
-        <div class="row">
+        <div  style="text-align: center;" class="row">
             <div class="column">
-                <div id="map" style="width: 100%;height:500px"></div>
+                <!--<div id="map" style="width: 100%;height:500px"></div>-->
             </div>
             <div class="column">
 
