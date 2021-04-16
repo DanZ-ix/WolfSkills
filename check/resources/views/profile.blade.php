@@ -4,7 +4,14 @@
     Личный кабинет
 @endsection
 
+@php
+    use \Illuminate\Support\Facades\Auth;
 
+    $user = Auth::user();
+    $user_name = $user['nickname'];
+
+
+@endphp
 
 @section('content')
     <!-- <h1 style="text-align: center;">Личный кабинет</h1> -->
@@ -26,11 +33,41 @@
     <div id="page">
         <div id="avatarka" style="float:left; width:25%;">
             <img src="content\images\profiles\tvoieblet.jpg" style=  "border-radius: 100px; width:100%; height:auto;">
-            <h3 id="rating" style="text-align:center;">♂♂♂♀♀</h3>
+
+            <h3 id="rating" style="text-align:center;">Рейтинг</h3>
+            @if(round($user['stars']) == 0)
+                <h3 id="rating" style="text-align:center;">Нет рейтинга</h3>
+            @endif
+
+            @if(round($user['stars']) == 1)
+                <h3 id="rating" style="text-align:center;">*</h3>
+            @endif
+
+            @if(round($user['stars']) == 2)
+                <h3 id="rating" style="text-align:center;">**</h3>
+            @endif
+
+            @if(round($user['stars']) == 3)
+                <h3 id="rating" style="text-align:center;">***</h3>
+            @endif
+
+            @if(round($user['stars']) == 4)
+                <h3 id="rating" style="text-align:center;">****</h3>
+            @endif
+
+            @if(round($user['stars']) == 5)
+                <h3 id="rating" style="text-align:center;">*****</h3>
+            @endif
+
+
+            <h3 id="mmr" style="text-align:center;">Очки</h3>
+
+            <h3 id="rating" style="text-align:center;">{{$user['rating']}}</h3>
+
         </div>
         <div id="mainsection" style="float:right; width:70%">
             <div id="ProfileBio" style="padding: 5px; background-color: #eeeff4; margin-top:15px;margin-bottom:15px;margin-left:5px;margin-right:5px;">
-                <h3>Юлия</h3>
+                <h3>{{$user['nickname']}}</h3>
                 <h3>Санкт петербург</h3>
                 <h3>Проститутский университет ильича дохлого</h3>
                 <div style="display:inline-block;"><div style="display:inline-block;background-color:gray;">5</div>оценка по сосанию</div>
