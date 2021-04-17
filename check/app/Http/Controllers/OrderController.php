@@ -46,4 +46,12 @@ class OrderController extends Controller
 
         return redirect()->route('home');
     }
+
+
+    public function GetOrders()
+    {
+        $Orders = Order::all();
+        return view('order_list', ['data' => $Orders]);
+
+    }
 }

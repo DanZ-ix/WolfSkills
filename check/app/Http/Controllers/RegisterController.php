@@ -41,6 +41,7 @@ class RegisterController extends Controller
             'rating' => 0
             ]);
             //$validateFields);
+
         if ($user)
         {
 

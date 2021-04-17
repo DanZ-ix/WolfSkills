@@ -45,6 +45,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function ChangeRole($role)
+    {
+        $this->fillable['role'] =  $role;
+    }
+
 
     public function setPasswordAttribute($password)
     {

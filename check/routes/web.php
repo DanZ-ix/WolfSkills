@@ -20,9 +20,11 @@ Route::get('/contacts', function () {return view('contacts');})->name('contacts'
 
 
 //ЗАКАЗЫ
+Route::get('/order_list', [\App\Http\Controllers\OrderController::class, 'GetOrders'])->middleware('auth')->name(('order_list'));
 Route::get('/order', function () {return view('order');})->middleware('auth')->name(('order'));
 
-Route::get('/order_list', function () {return view('order_list');})->middleware('auth')->name(('order_list'));
+//Route::get('/order_list', function () {return view('order_list');})->middleware('auth')->name(('order_list'));
+
 
 Route::post('/order_submit', [\App\Http\Controllers\OrderController::class, 'submit'])->name('order_submit');
 
