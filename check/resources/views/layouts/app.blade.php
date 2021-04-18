@@ -54,9 +54,27 @@
   </div>
 </nav>
 </header>
-<section style="width: 75%; margin-left: auto; margin-right: auto;">
-@yield('content')
-
-</section>
+        <div
+          class="bg-image"
+          style="
+            background-image: url('https://mdbcdn.b-cdn.net/img/Photos/Others/images/76.jpg');
+            height: 100vh;
+          ">
+              <section style="width: 75%; margin-left: auto; margin-right: auto;margin-bottom:auto;">
+              
+                
+                      <div
+                        class="bg-image"
+                        style="
+                          background-image: url('https://mdbcdn.b-cdn.net/img/Photos/Others/images/76.jpg');
+                          height: 100vh;
+                        ">
+                        <section style="width: 75%; margin-left: auto; margin-right: auto;">
+                        @yield('content')
+                        </section>
+                      </div>
+                  
+              </section>
+        </div>
 </body>
 </html>

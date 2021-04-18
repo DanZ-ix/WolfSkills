@@ -6,6 +6,11 @@
 @endsection
 
 @section('content')
+
+
+
+
+
     <h1 style="text-align: center;">Заказы</h1>
 
     @foreach($data as $elem)
@@ -37,8 +42,6 @@
         </div>
 
     @endforeach
-
-
 
 
 
