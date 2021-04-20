@@ -2,7 +2,7 @@
 
 
 @section('title')
-    Главная страница
+    Ошибка
 @endsection
 
 @section('content')

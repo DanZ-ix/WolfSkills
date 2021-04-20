@@ -26,6 +26,7 @@
       <a class="nav-item nav-link active" href="{{route('home')}}">Главная<span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="{{route('contacts')}}">Контакты</a>
       <a class="nav-item nav-link" href="{{route('about')}}">О нас</a>
+        <a class="nav-item nav-link" href="{{route('rules')}}">Правила</a>
 
 
         @if(\Illuminate\Support\Facades\Auth::check())
@@ -61,8 +62,8 @@
             height: 100vh;
           ">
               <section style="width: 75%; margin-left: auto; margin-right: auto;margin-bottom:auto;">
-              
-                
+
+
                       <div
                         class="bg-image"
                         style="
@@ -73,7 +74,7 @@
                         @yield('content')
                         </section>
                       </div>
-                  
+
               </section>
         </div>
 </body>

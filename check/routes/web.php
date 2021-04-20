@@ -17,6 +17,7 @@ Route::get('/', function () {return view('home');})->name('home');
 Route::get('/about', function () {return view('about');})->name('about');
 
 Route::get('/contacts', function () {return view('contacts');})->name('contacts');
+Route::get('/rules', function () {return view('rules');})->name('rules');
 
 
 //ЗАКАЗЫ
