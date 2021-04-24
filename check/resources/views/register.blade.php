@@ -26,10 +26,24 @@
 
 
 <div class="form-group">
-    <label for="nickname">Nickname</label>
-    <input type="text" class="form-control" id="nickname" name="nickname" aria-describedby="nicknameHelp" value="" placeholder="Введите nickname">
+    <label for="nickname">Ваше имя</label>
+    <input type="text" class="form-control" id="nickname" name="nickname" autocomplete="off" aria-describedby="nicknameHelp" value="" placeholder="Введите nickname">
+    <br>
 
-  </div>
+    <label for="city">Город</label>
+    <input type="text" class="form-control" id="city" name="city" autocomplete="off"  value="" placeholder="Введите ваш город">
+    <br>
+
+    <label for="uni">Университет</label>
+    <input type="text" class="form-control" id="uni" name="uni" autocomplete="off"  value="" placeholder="Введите ваш университет">
+    <br>
+
+    <label for="direction">Направление обучения</label>
+    <input type="text" class="form-control" id="direction" name="direction" autocomplete="off"  value="" placeholder="Введите ваше направление обучения">
+    <br>
+
+
+</div>
 
         <div class="form-group">
             <label for="email">Электронная почта</label>
@@ -46,6 +60,8 @@
       <div class="alert alert alert-danger"> {{ $message }}</div>
       @enderror
   </div>
+
+
   <button type="submit" class="btn btn-lg byn-primary" name="sendMe" value="1">Создать</button>
 </form>
 @endsection

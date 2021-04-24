@@ -21,6 +21,9 @@ class UserTable extends Migration
             $table->string('remember_token', 100)->nullable(true);
             $table->string('nickname', 25)->nullable(false);
             $table->string('role', 20)->nullable(false);
+            $table->string('city', 256)->nullable(false);
+            $table->string('uni', 256)->nullable(false);
+            $table->string('direction', 256)->nullable(false);
             $table->float('stars')->nullable(true);
             $table->integer('rating')->nullable(true);
             $table->timestamps();

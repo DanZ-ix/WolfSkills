@@ -39,6 +39,13 @@
             <br>
             <h4>Цена:</h4>
             <h5>{{$elem->cost}}</h5>
+        <form method="POST" action="{{ route('user.button_order_list') }}">
+            @csrf
+            <input type="hidden" class="form-control" id="nickname" name="id" autocomplete="off" aria-describedby="nicknameHelp" value="{{$elem->id}}" placeholder="Введите nickname">
+
+            <button type="submit" class="btn btn-lg byn-primary" name="sendMe" value="1">Создать</button>
+        </form>
+
         </div>
 
     @endforeach

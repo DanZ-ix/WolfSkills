@@ -33,7 +33,11 @@ Route::get('/error',  function () {return view('error');})->name('error');
 
 //РЕГИСТРАЦИЯ И ЛОГИН
 Route::name('user.')->group(function()
+
+
 {
+    Route::post('/order_button_take', [\App\Http\Controllers\Button_orderController::class, 'submit'])->name('button_order_list');
+
     Route::view('/lk', 'profile')->middleware('auth')->name('lk');
 
     Route::get('/login', function()

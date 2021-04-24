@@ -22,6 +22,7 @@ class Orders extends Migration
             $table->string('telephone', 255)->nullable(false);
             $table->string('deadline', 255)->nullable(false);
             $table->string('cost', 255)->nullable(true);
+            $table->integer('IspID')->nullable(true);
 
             $table->timestamps();
 

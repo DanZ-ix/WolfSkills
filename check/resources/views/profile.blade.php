@@ -6,10 +6,11 @@
 
 @php
     use \Illuminate\Support\Facades\Auth;
+    use Illuminate\Support\Facades\DB;
 
     $user = Auth::user();
     $user_name = $user['nickname'];
-
+    $orders = DB::select('select * from orders where IspID = ?', [Auth::id()])
 
 @endphp
 
@@ -68,16 +69,20 @@
         <div id="mainsection" style="float:right; width:70%">
             <div id="ProfileBio" style="padding: 5px; background-color: #eeeff4; margin-top:15px;margin-bottom:15px;margin-left:5px;margin-right:5px;">
                 <h3>{{$user['nickname']}}</h3>
-                <h3>Санкт петербург</h3>
-                <h3>Проститутский университет ильича дохлого</h3>
-                <div style="display:inline-block;"><div style="display:inline-block;background-color:gray;">5</div>оценка по сосанию</div>
-                <h3>Системный анал и фистинг</h3>
+                <h3>{{$user['city']}}</h3>
+                <h3>{{$user['uni']}}</h3>
+
+                <!--<div style="display:inline-block;"><div style="display:inline-block;background-color:gray;">5</div>оценка по сосанию</div>
+                -->
+                <h3>{{$user['direction']}}</h3>
             </div>
             <div id="MyTasks" style="padding: 5px; background-color: #eeeff4; margin-top:15px;margin-bottom:15px;margin-left:5px;margin-right:5px;">
                 <h2>Мои задачи</h2>
                 <div style="margin: 25px; background-color:#d9d9db;">
-                    <h3 id="taskName">Показать попку</h3>
-                    <p>Ванек обещал показать попку, но что то пошло не по плану...</p>
+                    @foreach($orders as $order)
+                    <h3 id="taskName">{{$order->name}}</h3>
+                    <p>{{$order->opisanie}}</p>
+                    @endforeach
                 </div>
                 <p style="text-align:right;">Показать всё</p>
 

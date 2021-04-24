@@ -21,7 +21,10 @@ class RegisterController extends Controller
                 'email' => ['required', 'email'],
                 'password' => 'required',
                 'nickname' => 'required',
-                'role' => 'required'
+                'role' => 'required',
+                'city' => 'required',
+                'uni' => 'required',
+                'direction' => 'required'
             ]);
 
         //dd($request);
@@ -37,6 +40,9 @@ class RegisterController extends Controller
             'email' => $validateFields['email'],
             'password' => $validateFields ['password'],
             'role' => $validateFields['role'],
+            'city' => $validateFields['city'],
+            'uni' => $validateFields['uni'],
+            'direction' => $validateFields['direction'],
             'stars' => 0,
             'rating' => 0
             ]);
