@@ -11,7 +11,7 @@
 @endsection
 
 @section('content')
-    <h1 style="text-align: center;">Разместить заказ</h1>
+
         <form method="POST" action="{{ route('order_submit') }}">
             @csrf
 

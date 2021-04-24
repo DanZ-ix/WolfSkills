@@ -11,7 +11,7 @@
 
 
 
-    <h1 style="text-align: center;">Заказы</h1>
+
 
     @foreach($data as $elem)
         <div class="alert alert-info">

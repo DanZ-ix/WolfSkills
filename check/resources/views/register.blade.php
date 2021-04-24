@@ -7,7 +7,7 @@
 
 
 @section('content')
-<h1 style="text-align: center;">Регистрация</h1>
+
 
 <form method="POST" action="{{ route('user.register') }}">
     @csrf

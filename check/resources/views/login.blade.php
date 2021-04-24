@@ -12,7 +12,7 @@
 
 
 @section('content')
-<h1 style="text-align: center;">Логин</h1>
+
 <form method="POST" action="{{ route('user.login') }}">
     @csrf
   <div class="form-group">

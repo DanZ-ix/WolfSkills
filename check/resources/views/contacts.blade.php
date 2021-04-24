@@ -8,9 +8,9 @@
 
 
 @section('content')
-<h1 style="text-align: center;">Контакты</h1>
 
-<div style="margin-left: 40%; margin-right: auto; text-align: center;" class="container"> 
+
+<div style="margin-left: 40%; margin-right: auto; text-align: center;" class="container">
   <div class="row">
     <div class="column">
       <div id="map" style="width:100%;height:500px"></div>
@@ -38,7 +38,7 @@
   <h3>
   <textarea type="LastName" class="form-control" id="exampleLastName" aria-describedby="LastNameHelp" placeholder="Напиши злой отзыв, пидрила"></textarea>
   </h3>
-  
+
   <button type="submit" class="btn btn-primary">Отправить нам в жопу</button>
       </form>
     </div>
