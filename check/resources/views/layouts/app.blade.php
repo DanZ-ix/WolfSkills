@@ -13,7 +13,12 @@
     <script src="{{ asset('/js/bootstrap.js') }}"></script> <!-- бутстраповский джиэс -->
     <title>@yield('title')</title>
 </head>
-<body>
+<body style="
+            background-image: url('{{ asset('content/images/profiles/tvoieblet.jpg') }}');
+            
+            background-size: cover;
+            background-repeat: no-repeat;
+          ">
 <header>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
@@ -55,27 +60,20 @@
   </div>
 </nav>
 </header>
-        <div
-          class="bg-image"
-          style="
-            background-image: url('https://mdbcdn.b-cdn.net/img/Photos/Others/images/76.jpg');
-            height: 100vh;
-          ">
-              <section style="width: 75%; margin-left: auto; margin-right: auto;margin-bottom:auto;">
-
-
-                      <div
-                        class="bg-image"
-                        style="
-                          background-image: url('https://mdbcdn.b-cdn.net/img/Photos/Others/images/76.jpg');
-                          height: 100vh;
+        
+                      
+                        
+                        <section style="width: 75%; margin-left: auto; margin-right: auto; padding: 10px;
+                      
+                          background-image: url('{{ asset('content/images/profiles/tvoieblet.jpg') }}');
+                          
+                          background-size: cover;
+                          background-repeat: no-repeat;
+                          background-attachment: fixed;
                         ">
-                        <section style="width: 75%; margin-left: auto; margin-right: auto;">
                         @yield('content')
                         </section>
-                      </div>
-
-              </section>
-        </div>
+                     
+             
 </body>
 </html>
