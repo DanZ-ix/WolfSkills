@@ -7,26 +7,46 @@
 
 @section('content')
 
-<form method="POST" action="{{ route('order_submit') }}">
-    @csrf
+
 
     <table><tr><td style="vertical-align:top; padding-top: 225px"></td></tr></table>
 
     <table>
-        <tr>
-            <td style="width:15%;"><button type="submit" class="btn btn-primary" style="text-align: center;width:350px;height:75px;"><h5>Отправить нам в жопу</h5></button></td>
-            <td style="vertical-align:top; padding: 10px 10px 10px 50px;"><h4>Дайте задание нашим исполнителям
-                    и получите готовую работу в срок!</h4></td>
-        </tr>
-        <tr><td style="vertical-align:top; padding-top: 100px"></td></tr>
+        @if(\Illuminate\Support\Facades\Auth::check())
+            @php
+                $user = \Illuminate\Support\Facades\Auth::user();
 
+                if ($user['role'] == 'Zakaz')
+                    $Zakaz = True;
+                else
+                    $Zakaz = False;
+            @endphp
+
+            @if($Zakaz)
+
+                <tr>
+                    <form method="GET" action="{{ route('order') }}">
+                        @csrf
+                        <td style="width:15%;"><button type="submit" class="btn btn-primary" style="text-align: center;width:350px;height:75px;"><h5>Отправить нам в жопу</h5></button></td>
+                        <td style="vertical-align:top; padding: 10px 10px 10px 50px;"><h4>Дайте задание нашим исполнителям
+                                и получите готовую работу в срок!</h4></td>
+                    </form>
+                </tr>
+                <tr><td style="vertical-align:top; padding-top: 100px"></td></tr>
+            @endif
+        @endif
+
+
+
+<form method="GET" action="{{ route('order_list') }}">
+    @csrf
         <tr>
 
             <td style="vertical-align:top; padding: 10px;"><h4>Ты студент и хочешь заработать?
                 Стань нашим исполнителем, чтобы получить доступ к зданиям!</h4></td>
             <td style="width:15%;padding: 10px 10px 10px 50px;"><button type="submit" class="btn btn-primary" style="text-align: center;width:350px;height:75px;"><h5>Отправить нам в жопу</h5></button></td>
         </tr>
-
+</form>
         <tr><td style="vertical-align:top; padding-top: 225px"></td></tr>
     </table>
     <h2 style="text-align: center;">Наши преимущества</h2>
@@ -72,10 +92,6 @@
 
 
 
-
-
-
-</form>
 @endsection
 
 

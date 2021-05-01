@@ -9,3 +9,8 @@
 8. Добавить отдельные страницы для каждого заказа
 
 9. Добавить логику подачи заявок на заказ и выбора исполнителя, выполнение заказа, оставление отзыва
+
+https://iconduck.com/icons/56890/pen
+https://iconduck.com/icons/108876/timer
+https://iconduck.com/icons/72243/gear
+https://iconduck.com/icons/4703/coin
