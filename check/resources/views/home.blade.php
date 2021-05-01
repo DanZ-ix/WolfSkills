@@ -34,6 +34,16 @@
                 </tr>
                 <tr><td style="vertical-align:top; padding-top: 100px"></td></tr>
             @endif
+        @else
+            <tr>
+                <form method="GET" action="{{ route('order') }}">
+                    @csrf
+                    <td style="width:15%;"><button type="submit" class="btn btn-primary" style="text-align: center;width:350px;height:75px;"><h5>Отправить нам в жопу</h5></button></td>
+                    <td style="vertical-align:top; padding: 10px 10px 10px 50px;"><h4>Дайте задание нашим исполнителям
+                            и получите готовую работу в срок!</h4></td>
+                </form>
+            </tr>
+            <tr><td style="vertical-align:top; padding-top: 100px"></td></tr>
         @endif
 
 

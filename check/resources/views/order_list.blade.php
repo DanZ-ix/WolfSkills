@@ -41,9 +41,10 @@
             <h5>{{$elem->cost}}</h5>
         <form method="POST" action="{{ route('user.button_order_list') }}">
             @csrf
-            <input type="hidden" class="form-control" id="nickname" name="id" autocomplete="off" aria-describedby="nicknameHelp" value="{{$elem->id}}" placeholder="Введите nickname">
+            <input type="hidden" class="form-control" id="nickname" name="id" autocomplete="off" aria-describedby="nicknameHelp" value="{{$elem->id}}">
+            <input type="hidden" class="form-control" id="nickname" name="Zakaz_ID" autocomplete="off" aria-describedby="nicknameHelp" value="{{$elem->Zakaz_ID}}">
 
-            <button type="submit" class="btn btn-lg byn-primary" name="sendMe" value="1">Создать</button>
+            <button type="submit" class="btn btn-lg byn-primary" name="sendMe" value="1">Подать заявку</button>
         </form>
 
         </div>

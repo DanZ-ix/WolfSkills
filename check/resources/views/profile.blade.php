@@ -10,7 +10,20 @@
 
     $user = Auth::user();
     $user_name = $user['nickname'];
-    $orders = DB::select('select * from orders where IspID = ?', [Auth::id()])
+    $users = DB::select('select * from users');
+
+
+    if ($user['role'] == 'Zakaz')
+    {
+        $orders = DB::select('select * from orders where Zakaz_ID = ?', [Auth::id()]);
+
+        $requests = DB::select('select * from orders_requests where zakaz_id = ?', [Auth::id()]);
+
+    }
+    else
+        {
+        $orders = DB::select('select * from orders where IspID = ?', [Auth::id()]);
+    }
 
 @endphp
 
@@ -77,7 +90,28 @@
                 <h3>{{$user['direction']}}</h3>
             </div>
             <div id="MyTasks" style="padding: 5px; background-color: #eeeff4; margin-top:15px;margin-bottom:15px;margin-left:5px;margin-right:5px;">
-                <h2>Мои задачи</h2>
+                @if($user['role'] == 'Zakaz')
+                    <h2>Мои задачи</h2>
+                @foreach($orders as $order)
+                        <h2>Задача:</h2>
+                        <h3>{{$order->name}}</h3>
+                        <h2>Заявки: </h2>
+
+                    @foreach($requests as $request)
+                        @foreach($users as $user)
+                            @if($user->id == $request->isp_id and $request->order_id == $order->id)
+                                    <h2>{{$user->email}}</h2>
+                                @break
+
+                                @endif
+                            @endforeach
+
+                    @endforeach
+                    <br>
+                    @endforeach
+                @endif
+
+
                 <div style="margin: 25px; background-color:#d9d9db;">
                     @foreach($orders as $order)
                     <h3 id="taskName">{{$order->name}}</h3>

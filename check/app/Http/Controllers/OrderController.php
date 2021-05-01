@@ -41,6 +41,7 @@ class OrderController extends Controller
         $contact-> telephone = $validateFields['contacts']; // $request->input('telephone');
         $contact-> deadline =  $validateFields['deadline']; //$request->input('deadline');
         $contact-> cost =  $validateFields['cost'];    //$request->input('cost');
+        $contact-> Zakaz_ID = Auth::id();
 
         $contact->save();
 
