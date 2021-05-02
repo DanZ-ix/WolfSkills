@@ -14,10 +14,10 @@
 
 <h2 style="text-align: center;">
 <div class="btn-group btn-group-toggle" data-toggle="buttons">
-  <label class="btn btn-secondary active">
+  <label class="btn btn-primary active">
       <input type="radio" name="role" id="option2" value="Isp" autocomplete="on" checked> Я исполнитель
   </label>
-  <label class="btn btn-secondary">
+  <label class="btn btn-primary">
 
       <input type="radio" name="role" id="option1" value="Zakaz" autocomplete="on" > Я заказчик
   </label>
@@ -61,7 +61,7 @@
       @enderror
   </div>
 
-
-  <button type="submit" class="btn btn-lg byn-primary" name="sendMe" value="1">Создать</button>
+  
+  <button type="submit" class="btn btn-primary byn-primary" name="sendMe" value="1">Создать</button>
 </form>
 @endsection

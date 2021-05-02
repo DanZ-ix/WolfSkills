@@ -14,7 +14,7 @@
     <title>@yield('title')</title>
 </head>
 <body style="
-            background-image: url('{{ asset('content/images/profiles/tvoieblet.jpg') }}');
+            background-image: url('{{ asset('content/images/profiles/fon2.jpg') }}');
             
             background-size: cover;
             background-repeat: no-repeat;
@@ -29,7 +29,7 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="{{route('home')}}">Главная<span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="{{route('contacts')}}">Контакты</a>
+      
       <a class="nav-item nav-link" href="{{route('about')}}">О нас</a>
         <a class="nav-item nav-link" href="{{route('rules')}}">Правила</a>
 
@@ -65,7 +65,7 @@
                         
                         <section style="width: 75%; margin-left: auto; margin-right: auto; padding: 10px;
                       
-                          background-image: url('{{ asset('content/images/profiles/tvoieblet.jpg') }}');
+                          background-image: url('{{ asset('content/images/profiles/fon.jpg') }}');
                           
                           background-size: cover;
                           background-repeat: no-repeat;
