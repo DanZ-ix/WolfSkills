@@ -114,21 +114,23 @@
                         <h2>Заявки: </h2>
 
                     @foreach($requests as $request)
-                        @foreach($users as $user)
-                            @if($user->id == $request->isp_id and $request->order_id == $order->id)
+                        @foreach($users as $user_isp)
+                            @if($user_isp->id == $request->isp_id and $request->order_id == $order->id)
                                     <div class="alert alert-info">
 
 
-                                        <h3>{{$user->nickname}}</h3>
-                                        <h3>{{$user->email}}</h3>
+                                        <h3>{{$user_isp->nickname}}</h3>
+                                        <h3>{{$user_isp->email}}</h3>
 
                                         <form method="POST" action="{{ route('user.button_order_choose') }}">
                                             @csrf
-                                            <input type="hidden" class="form-control" name="id" autocomplete="off" value="{{$user->id}}">
-                                            <input type="hidden" class="form-control" name="Zakaz-ID" autocomplete="off" value="{{$user->id}}">
+                                            <input type="hidden" class="form-control" name="isp_id" autocomplete="off" value="{{$user_isp->id}}">
+                                            <input type="hidden" class="form-control" name="zakaz_id" autocomplete="off" value="{{$user->id}}">
+                                            <input type="hidden" class="form-control" name="request_id" autocomplete="off" value="{{$request->id}}">
+                                            <input type="hidden" class="form-control" name="order_id" autocomplete="off" value="{{$order->id}}">
 
 
-                                            <button type="submit" class="btn btn-lg byn-primary" name="sendMe" value="1">Выбрать исполнителя</button>
+                                            <button type="submit" class="btn btn-primary" name="sendMe" value="1">Выбрать исполнителя</button>
                                         </form>
 
                                     </div>
