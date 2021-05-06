@@ -18,4 +18,13 @@ class Button_orderController extends Controller
 
         return redirect()->route('user.lk');
     }
+
+    public function choose(Request $request)
+    {
+        dd($request);
+        //Меняем в заказе поле исполнителя и поле кондиции на 1
+        //В ордерс реквестс меняем ассптед на 1
+
+
+    }
 }

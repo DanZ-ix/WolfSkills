@@ -36,6 +36,10 @@ Route::name('user.')->group(function()
 
 
 {
+
+
+    Route::post('/order_button_choose', [\App\Http\Controllers\Button_orderController::class, 'choose'])->name('button_order_choose');
+
     Route::post('/order_button_take', [\App\Http\Controllers\Button_orderController::class, 'submit'])->name('button_order_list');
 
     Route::view('/lk', 'profile')->middleware('auth')->name('lk');

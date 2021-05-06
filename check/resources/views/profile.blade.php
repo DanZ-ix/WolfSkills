@@ -27,6 +27,7 @@
 
 @endphp
 
+
 @section('content')
     <!-- <h1 style="text-align: center;">Личный кабинет</h1> -->
     <!--<div id="profile">
@@ -93,6 +94,21 @@
                 @if($user['role'] == 'Zakaz')
                     <h2>Мои задачи</h2>
                 @foreach($orders as $order)
+
+
+
+                    @if($order->condition==1)
+                        <h2>находим исполнителя и выводим его ник и почту</h2>
+
+                        @endif
+
+                    @if($order->condition==2)
+                        <h2>Выполненный заказ</h2>
+                        @endif
+
+
+
+                    @if($order->condition==0)
                         <h2>Задача:</h2>
                         <h3>{{$order->name}}</h3>
                         <h2>Заявки: </h2>
@@ -100,18 +116,42 @@
                     @foreach($requests as $request)
                         @foreach($users as $user)
                             @if($user->id == $request->isp_id and $request->order_id == $order->id)
-                                    <h2>{{$user->email}}</h2>
+                                    <div class="alert alert-info">
+
+
+                                        <h3>{{$user->nickname}}</h3>
+                                        <h3>{{$user->email}}</h3>
+
+                                        <form method="POST" action="{{ route('user.button_order_choose') }}">
+                                            @csrf
+                                            <input type="hidden" class="form-control" name="id" autocomplete="off" value="{{$user->id}}">
+                                            <input type="hidden" class="form-control" name="Zakaz-ID" autocomplete="off" value="{{$user->id}}">
+
+
+                                            <button type="submit" class="btn btn-lg byn-primary" name="sendMe" value="1">Выбрать исполнителя</button>
+                                        </form>
+
+                                    </div>
+
                                 @break
 
                                 @endif
                             @endforeach
 
+
+
                     @endforeach
                     <br>
+
+                    @endif
                     @endforeach
+
+
+
+
                 @endif
 
-
+<!--
                 <div style="margin: 25px; background-color:#d9d9db;">
                     @foreach($orders as $order)
                     <h3 id="taskName">{{$order->name}}</h3>
@@ -119,7 +159,7 @@
                     @endforeach
                 </div>
                 <p style="text-align:right;">Показать всё</p>
-
+-->
             </div>
             <div id="Otzyv" style="padding: 5px; background-color: #eeeff4; margin-top:15px;margin-bottom:15px;margin-left:5px;margin-right:5px;">
                 <h2>Отзывы</h2>
