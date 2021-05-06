@@ -1072,7 +1072,7 @@ BACKUP_ADMIN,BINLOG_ADMIN,CONNECTION_ADMIN,ENCRYPTION_KEY_ADMIN,GROUP_REPLICATIO
       <Position>9</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="320" parent="288" name="condition">
+    <column id="320" parent="288" name="status">
       <Position>10</Position>
       <DataType>int(11)|0s</DataType>
     </column>

@@ -24,7 +24,7 @@ class Orders extends Migration
             $table->string('cost', 255)->nullable(true);
             $table->integer('Zakaz_ID')->nullable(true);
             $table->integer('IspID')->nullable(true);
-            $table->integer('condition')->nullable(true);
+            $table->integer('status')->nullable(true);
 
 
 

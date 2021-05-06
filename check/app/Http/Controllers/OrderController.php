@@ -42,7 +42,7 @@ class OrderController extends Controller
         $contact-> deadline =  $validateFields['deadline']; //$request->input('deadline');
         $contact-> cost =  $validateFields['cost'];    //$request->input('cost');
         $contact-> Zakaz_ID = Auth::id();
-        $contact-> condition = 0;   //0 - нет исполнителя
+        $contact-> status = 0;   //0 - нет исполнителя
                                     //1 - в процессе выполнения
                                     //2 - Выполнен
 

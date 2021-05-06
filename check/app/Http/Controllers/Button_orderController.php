@@ -21,7 +21,10 @@ class Button_orderController extends Controller
 
     public function choose(Request $request)
     {
-        dd($request);
+        //dd($request);
+
+        DB::update('update orders set status = 1 where id = ?', [$request['order_id']]);
+        DB::update('update orders_requests set accepted = 1 where id = ?', [$request['request_id']]);
         //Меняем в заказе поле исполнителя и поле кондиции на 1
         //В ордерс реквестс меняем ассптед на 1
 

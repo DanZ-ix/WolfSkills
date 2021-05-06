@@ -97,18 +97,18 @@
 
 
 
-                    @if($order->condition==1)
+                    @if($order->status==1)
                         <h2>находим исполнителя и выводим его ник и почту</h2>
 
                         @endif
 
-                    @if($order->condition==2)
+                    @if($order->status==2)
                         <h2>Выполненный заказ</h2>
                         @endif
 
 
 
-                    @if($order->condition==0)
+                    @if($order->status==0)
                         <h2>Задача:</h2>
                         <h3>{{$order->name}}</h3>
                         <h2>Заявки: </h2>
@@ -116,6 +116,8 @@
                     @foreach($requests as $request)
                         @foreach($users as $user_isp)
                             @if($user_isp->id == $request->isp_id and $request->order_id == $order->id)
+
+
                                     <div class="alert alert-info">
 
 
