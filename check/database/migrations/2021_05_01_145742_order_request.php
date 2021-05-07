@@ -33,6 +33,6 @@ class OrderRequest extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('orders_requests');
     }
 }

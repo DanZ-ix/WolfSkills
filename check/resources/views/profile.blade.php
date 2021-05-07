@@ -45,6 +45,8 @@
     <div id="mainsection">
 
     </div>-->
+
+
     <div id="page">
         <div id="avatarka" style="float:left; width:25%;">
             <img src="content\images\profiles\tvoieblet.jpg" style=  "border-radius: 100px; width:100%; height:auto;">
@@ -105,8 +107,6 @@
                     @if($order->status==2)
                         <h2>Выполненный заказ</h2>
                         @endif
-
-
 
                     @if($order->status==0)
                         <h2>Задача:</h2>
