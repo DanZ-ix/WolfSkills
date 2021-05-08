@@ -60,6 +60,11 @@ class OrderController extends Controller
 
     }
 
+    public function OneOrder($id)
+    {
+        $Orders = Order::all();
+        return view('order_one', ['data' => $Orders->find($id)]);
 
+    }
 
 }

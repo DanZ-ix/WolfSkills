@@ -22,6 +22,7 @@ Route::get('/error',  function () {return view('error');})->name('error');
 Route::get('/order_list', [OrderController::class, 'GetOrders'])->middleware('auth')->name(('order_list'));
 Route::get('/order', function () {return view('order');})->middleware('auth')->name(('order'));
 Route::post('/order_submit', [OrderController::class, 'submit'])->name('order_submit');
+Route::get('/order_list/{id}', [OrderController::class, 'OneOrder'])->name('one_order');
 //endregion
 
 //РЕГИСТРАЦИЯ И ЛОГИН

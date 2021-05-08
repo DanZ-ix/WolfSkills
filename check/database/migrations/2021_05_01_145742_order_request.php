@@ -16,9 +16,9 @@ class OrderRequest extends Migration
         Schema::create('orders_requests', function(Blueprint $table)
         {
             $table->increments('id');
-            $table->integer('order_id')->nullable(false);
-            $table->integer('isp_id')->nullable(false);
-            $table->integer('zakaz_id')->nullable(false);
+            $table->integer('order_id');
+            $table->integer('isp_id');
+            $table->integer('zakaz_id');
             $table->integer('accepted');
 
             $table->timestamps();

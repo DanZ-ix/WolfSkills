@@ -47,6 +47,8 @@
             <button type="submit" class="btn btn-lg byn-primary" name="sendMe" value="1">Подать заявку</button>
         </form>
 
+            <a href="{{route('one_order', $elem->id)}}"><button class="btn btn-warning">Детальнее</button></a>
+
         </div>
 
     @endforeach
