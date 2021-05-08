@@ -1,6 +1,12 @@
 <?php
 
+//region imports
+use App\Http\Controllers\Button_orderController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
+//endregion
 
 
 
@@ -13,17 +19,17 @@ Route::get('/error',  function () {return view('error');})->name('error');
 //endregion
 
 //region orders
-Route::get('/order_list', [\App\Http\Controllers\OrderController::class, 'GetOrders'])->middleware('auth')->name(('order_list'));
+Route::get('/order_list', [OrderController::class, 'GetOrders'])->middleware('auth')->name(('order_list'));
 Route::get('/order', function () {return view('order');})->middleware('auth')->name(('order'));
-Route::post('/order_submit', [\App\Http\Controllers\OrderController::class, 'submit'])->name('order_submit');
+Route::post('/order_submit', [OrderController::class, 'submit'])->name('order_submit');
 //endregion
 
 //РЕГИСТРАЦИЯ И ЛОГИН
 Route::name('user.')->group(function()
 {
     //region order_buttons
-    Route::post('/order_button_choose', [\App\Http\Controllers\Button_orderController::class, 'choose'])->name('button_order_choose');
-    Route::post('/order_button_take', [\App\Http\Controllers\Button_orderController::class, 'submit'])->name('button_order_list');
+    Route::post('/order_button_choose', [Button_orderController::class, 'choose'])->name('button_order_choose');
+    Route::post('/order_button_take', [Button_orderController::class, 'submit'])->name('button_order_list');
     //endregion
 
     //region LoginRegister
@@ -53,8 +59,8 @@ Route::name('user.')->group(function()
         return view('register');
     })->name('register');
 
-    Route::post('/register', [\App\Http\Controllers\RegisterController::class, 'save']);
-    Route::post('/login', [\App\Http\Controllers\LoginController::class, 'login']);
+    Route::post('/register', [RegisterController::class, 'save']);
+    Route::post('/login', [LoginController::class, 'login']);
     //endregion
 
     //Личный кабинет

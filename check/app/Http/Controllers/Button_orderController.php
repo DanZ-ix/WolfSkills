@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -24,6 +23,7 @@ class Button_orderController extends Controller
         //dd($request);
 
         DB::update('update orders set status = 1 where id = ?', [$request['order_id']]);
+        DB::update('update orders set IspID = ? where id = ?', [$request['isp_id'] ,$request['order_id']]);
         DB::update('update orders_requests set accepted = 1 where id = ?', [$request['request_id']]);
         //Меняем в заказе поле исполнителя и поле кондиции на 1
         //В ордерс реквестс меняем ассптед на 1
