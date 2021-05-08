@@ -15,9 +15,12 @@
 
     if ($user['role'] == 'Zakaz')
     {
-        $orders = DB::select('select * from orders where Zakaz_ID = ?', [Auth::id()]);
 
-        $requests = DB::select('select * from orders_requests where zakaz_id = ?', [Auth::id()]);
+        $orders_requests = DB::select('select * from orders where Zakaz_ID = ? and status = 0', [Auth::id()]);
+        $orders_in_progress = DB::select('select * from orders where Zakaz_ID = ? and status = 1',[Auth::id()]);
+        $orders_done = DB::select('select * from orders where Zakaz_ID = ? and status = 2', [Auth::id()]);
+
+        $requests = DB::select('select * from orders_requests where zakaz_id = ? and accepted = 0', [Auth::id()]);
 
     }
     else
@@ -95,26 +98,35 @@
             <div id="MyTasks" style="padding: 5px; background-color: #eeeff4; margin-top:15px;margin-bottom:15px;margin-left:5px;margin-right:5px;">
                 @if($user['role'] == 'Zakaz')
                     <h2>Мои задачи</h2>
-                @foreach($orders as $order)
 
 
 
-                    @if($order->status==1)
-                        <h2>находим исполнителя и выводим его ник и почту кнопка заказ выполнен: на страницу с оценками</h2>
+                <h2>Выполняются</h2>
+                @foreach($orders_in_progress as $order)
+                    @foreach( $users as $user_isp)
+                        @if($user_isp->id == $order->IspID)
+                        <div class="alert-info">
+                            <h3>{{$order->name}}</h3>
+                            <h3>{{$user_isp->email}}</h3>
 
-                        @endif
 
-                    @if($order->status==2)
-                        <h2>Выполненный заказ</h2>
-                        @endif
+                        </div>
 
-                    @if($order->status==0)
+                            @endif
+                        @endforeach
+                    @endforeach
+
+
+
+
+                @foreach($orders_requests as $order)
                         <h2>Задача:</h2>
                         <h3>{{$order->name}}</h3>
                         <h2>Заявки: </h2>
 
                     @foreach($requests as $request)
-                        @foreach($users as $user_isp)
+                            @foreach($users as $user_isp)
+
                             @if($user_isp->id == $request->isp_id and $request->order_id == $order->id)
 
 
@@ -137,30 +149,27 @@
 
                                     </div>
 
-                                @break
-
-                                @endif
-                            @endforeach
-
-
-
+                                                    @break
+                                                @endif
+                                            @endforeach
                     @endforeach
                     <br>
-
-                    @endif
                     @endforeach
 
 
+
+
+                    @foreach($orders_done as $order)
+                        <h2>{{$order->name}} Закончен</h2>
+
+                    @endforeach
 
 
                 @endif
 
 <!--
                 <div style="margin: 25px; background-color:#d9d9db;">
-                    @foreach($orders as $order)
-                    <h3 id="taskName">{{$order->name}}</h3>
-                    <p>{{$order->opisanie}}</p>
-                    @endforeach
+
                 </div>
                 <p style="text-align:right;">Показать всё</p>
 -->
