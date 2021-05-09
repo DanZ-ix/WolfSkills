@@ -6,19 +6,20 @@
 @endsection
 
 @section('content')
+
     <div class="row">
         <div class="col-sm" style="text-align: center">
-        <a href="{{route('order_list')}}"><button class="btn btn-warning">Все заказы</button></a>
-    </div>
-    <div class="col-sm" style="text-align: center">
-        <a href="{{route('order_list_napr', 'design')}}"><button class="btn btn-warning">Дизайн</button></a>
-    </div>
-    <div class="col-sm" style="text-align: center">
-        <a href="{{route('order_list_napr', 'programming')}}"><button class="btn btn-warning">Программирование</button></a>
-    </div>
-    <div class="col-sm" style="text-align: center">
-        <a href="{{route('order_list_napr', 'elda')}}"><button class="btn btn-warning">ЕЛДА</button></a>
-    </div>
+            <a href="{{route('order_list')}}"><button class="btn btn-warning">Все заказы</button></a>
+        </div>
+        <div class="col-sm" style="text-align: center">
+            <a href="{{route('order_list_napr', 'design')}}"><button class="btn btn-warning">Дизайн</button></a>
+        </div>
+        <div class="col-sm" style="text-align: center">
+            <a href="{{route('order_list_napr', 'programming')}}"><button class="btn btn-warning">Программирование</button></a>
+        </div>
+        <div class="col-sm" style="text-align: center">
+            <a href="{{route('order_list_napr', 'elda')}}"><button class="btn btn-warning">ЕЛДА</button></a>
+        </div>
     </div>
     <br>
     @if($data==null)

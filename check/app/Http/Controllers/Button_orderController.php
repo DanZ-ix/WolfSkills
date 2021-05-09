@@ -28,6 +28,6 @@ class Button_orderController extends Controller
         //Меняем в заказе поле исполнителя и поле кондиции на 1
         //В ордерс реквестс меняем ассптед на 1
 
-
+        return redirect()->route('user.lk');
     }
 }

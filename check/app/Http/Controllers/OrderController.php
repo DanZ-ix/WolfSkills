@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Order;
-use Illuminate\Foundation\Http\FormRequest;
+
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
@@ -57,6 +58,14 @@ class OrderController extends Controller
     {
         $Orders = Order::all();
         return view('order_list', ['data' => $Orders]);
+
+    }
+
+    public function GetOrdersNapr($napr)
+    {
+        $Orders = DB::select('select * from orders where napravlenie=?', [$napr]);
+        //dd($Orders);
+        return view('order_list_napr', ['data' => $Orders]);
 
     }
 

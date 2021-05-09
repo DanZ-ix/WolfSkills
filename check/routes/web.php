@@ -19,7 +19,10 @@ Route::get('/error',  function () {return view('error');})->name('error');
 //endregion
 
 //region orders
-Route::get('/order_list', [OrderController::class, 'GetOrders'])->middleware('auth')->name(('order_list'));
+Route::get('/order_list/all', [OrderController::class, 'GetOrders'])->middleware('auth')->name(('order_list'));
+Route::get('/order_list/all/{napr}', [OrderController::class, 'GetOrdersNapr'])->middleware('auth')->name(('order_list_napr'));
+
+
 Route::get('/order', function () {return view('order');})->middleware('auth')->name(('order'));
 Route::post('/order_submit', [OrderController::class, 'submit'])->name('order_submit');
 Route::get('/order_list/{id}', [OrderController::class, 'OneOrder'])->name('one_order');
