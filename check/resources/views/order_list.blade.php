@@ -45,7 +45,7 @@
             <h4>Цена:</h4>
             <h5>{{$elem->cost}}</h5>
             <br>
-            <a href="{{route('one_order', $elem->id)}}"><button class="btn btn-warning">Детальнее</button></a>
+            <a href="{{route('one_order', $elem->id)}}"><button class="btn btn-primary">Детальнее</button></a>
 
         </div>
 

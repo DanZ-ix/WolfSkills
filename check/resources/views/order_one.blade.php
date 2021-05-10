@@ -37,7 +37,7 @@
             <input type="hidden" class="form-control" id="nickname" name="id" autocomplete="off" aria-describedby="nicknameHelp" value="{{$data->id}}">
             <input type="hidden" class="form-control" id="nickname" name="Zakaz_ID" autocomplete="off" aria-describedby="nicknameHelp" value="{{$data->Zakaz_ID}}">
 
-            <button type="submit" class="btn btn-warning" name="sendMe" value="1">Подать заявку</button>
+            <button type="submit" class="btn btn-primary" name="sendMe" value="1">Подать заявку</button>
         </form>
 
     </div>

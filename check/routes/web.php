@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Response;
 //endregion
 
 
@@ -15,6 +16,14 @@ Route::get('/', function () {return view('home');})->name('home');
 Route::get('/about', function () {return view('about');})->name('about');
 Route::get('/contacts', function () {return view('contacts');})->name('contacts');
 Route::get('/rules', function () {return view('rules');})->name('rules');
+Route::get('/rules/download', function ()
+{
+   $file = public_path()."/rules.pdf";
+
+   $headers = array('Content-Type: application/pdf',);
+
+   return Response::download($file, "rules.pdf", $headers);
+})->name("RulesFile");
 Route::get('/error',  function () {return view('error');})->name('error');
 //endregion
 
