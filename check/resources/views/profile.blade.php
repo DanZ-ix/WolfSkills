@@ -15,7 +15,6 @@
 
     if ($user['role'] == 'Zakaz')
     {
-
         $orders_requests = DB::select('select * from orders where Zakaz_ID = ? and status = 0', [Auth::id()]);
         $orders_in_progress = DB::select('select * from orders where Zakaz_ID = ? and status = 1',[Auth::id()]);
         $orders_done = DB::select('select * from orders where Zakaz_ID = ? and status = 2', [Auth::id()]);

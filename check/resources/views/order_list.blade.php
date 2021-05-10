@@ -28,16 +28,6 @@
         <div class="alert alert-info">
             <h3>{{$elem->name}}</h3>
             <br>
-            <h4>Направление:</h4>
-            @if($elem->napravlenie=='design')
-                <h5>Дизайн</h5>
-            @endif
-            @if($elem->napravlenie=='programming')
-                <h5>Программирование</h5>
-            @endif
-            @if($elem->napravlenie=='elda')
-                <h5>Елда</h5>
-            @endif
             <br>
             <h4>Сроки:</h4>
             <h5>{{$elem->deadline}}</h5>
