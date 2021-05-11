@@ -77,7 +77,8 @@ Route::name('user.')->group(function()
     //endregion
 
     //Личный кабинет
-    Route::view('/lk', 'profile')->middleware('auth')->name('lk');
+    Route::get('/lk', [\App\Http\Controllers\LkController::class, 'GetAllOrders'])->middleware('auth')->name('lk');
+  //  Route::view('/lk', 'profile')->middleware('auth')->name('lk');
 
 });
 

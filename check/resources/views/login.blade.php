@@ -13,7 +13,7 @@
 
 @section('content')
 
-<form method="POST" action="{{ route('user.login') }}">
+<form method="POST" action="{{ route('user.login') }}"  >
     @csrf
   <div class="form-group">
     <label for="exampleInputEmail1">Электронная почта</label>
@@ -31,4 +31,65 @@
   </div>
   <button type="submit" class="btn btn-primary">Войти</button>
 </form>
+<br>
+<h1></h1>
+<br>
+<h1></h1>
+<br>
+<h1></h1>
+<br>
+<h1></h1>            <br>
+<h1></h1>
+<br>
+<h1></h1>
+<br>
+<h1></h1>
+<br>
+<h1></h1>            <br>
+<h1></h1>
+<br>
+<h1></h1>
+<br>
+<h1></h1>
+<br>
+<h1></h1>            <br>
+<h1></h1>
+<br>
+<h1></h1>
+<br>
+<h1></h1>
+<br>
+<h1></h1>
+<br>
+<h1></h1>
+<br>
+<h1></h1>
+<br>
+<h1></h1>
+<br>
+<h1></h1>
+<br>
+<h1></h1>
+<br>
+<h1></h1>
+<br>
+<h1></h1>
+<br>
+<h1></h1>
+<br>
+<h1></h1>
+<br>
+<h1></h1>
+<br>
+<h1></h1>
+<br>
+<h1></h1>
+<br>
+<h1></h1>
+<br>
+
+
+
+
+
 @endsection

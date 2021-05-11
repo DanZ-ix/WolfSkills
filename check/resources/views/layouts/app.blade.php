@@ -68,10 +68,10 @@
 
 
                           background-size: cover;
-                          background-repeat: no-repeat;
+                          background-repeat: repeat-y;
                           background-attachment: fixed;
                             Overflow:hidden;
-                        ">.semiopacity
+                        ">
                         @yield('content')
                         </section>
 

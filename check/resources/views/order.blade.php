@@ -32,13 +32,13 @@
                 </select>
             </div>
             <h3>
-                <textarea  name="description"   autocomplete="off"  rows="10" cols="45" class="form-control"   placeholder="Подробно опишите задание, пидрила"></textarea>
+                <textarea  name="description"   autocomplete="off"  rows="10" cols="45" class="form-control"   placeholder="Подробно опишите задание"></textarea>
                 @error('description')
                 <div class="alert alert alert-danger"> {{ $message }}</div>
                 @enderror
             </h3>
             <h3>
-                <textarea name="contacts"  autocomplete="off"  rows="10" cols="45" class="form-control" aria-describedby="ContactsHelp" placeholder="Укажите как с Вами связаться, пидрила"></textarea>
+                <textarea name="contacts"  autocomplete="off"  rows="10" cols="45" class="form-control" aria-describedby="ContactsHelp" placeholder="Укажите ваши контакты"></textarea>
                 @error('contacts')
                 <div class="alert alert alert-danger"> {{ $message }}</div>
                 @enderror
@@ -60,7 +60,7 @@
             </div>
 
 
-            <button type="submit" class="btn btn-primary">Отправить нам в жопу</button>
+            <button type="submit" class="btn btn-primary">Отправить</button>
             <br>
             <h1></h1>
             <br>

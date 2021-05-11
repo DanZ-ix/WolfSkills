@@ -8,7 +8,7 @@
 @section('content')
 
 
-    
+
     <table><tr><td style="vertical-align:top; padding-top: 225px"></td></tr></table>
 
     <table>
@@ -25,38 +25,36 @@
             @if($Zakaz)
 
                 <tr>
-                    <form method="GET" action="{{ route('order') }}">
-                        @csrf
-                        <td style="width:15%;"><button type="submit" class="btn btn-primary" style="text-align: center;width:350px;height:75px;"><h5>Отправить нам в жопу</h5></button></td>
+                        <td style="width:15%;"><a href="{{route('order')}}"><button type="submit" class="btn btn-primary" style="text-align: center;width:350px;height:75px;"><h5>Отправить нам в жопу</h5></button></a></td>
                         <td style="vertical-align:top; padding: 10px 10px 10px 50px;"><h4>Дайте задание нашим исполнителям
                                 и получите готовую работу в срок!</h4></td>
-                    </form>
+
                 </tr>
                 <tr><td style="vertical-align:top; padding-top: 100px"></td></tr>
             @endif
         @else
             <tr>
-                <form method="GET" action="{{ route('order') }}">
-                    @csrf
-                    <td style="width:15%;"><button type="submit" class="btn btn-primary" style="text-align: center;width:350px;height:75px;"><h5>Отправить нам в жопу</h5></button></td>
+
+
+                    <td style="width:15%;"><a href="{{route('order')}}"><button type="submit" class="btn btn-primary" style="text-align: center;width:350px;height:75px;"><h5>Отправить нам в жопу</h5></button></a></td>
                     <td style="vertical-align:top; padding: 10px 10px 10px 20%;"><h4>Дайте задание нашим исполнителям
                             и получите готовую работу в срок!</h4></td>
-                </form>
+
             </tr>
             <tr><td style="vertical-align:top; padding-top: 100px"></td></tr>
         @endif
 
 
 
-<form method="GET" action="{{ route('order_list') }}">
-    @csrf
+
+
         <tr>
 
             <td style="vertical-align:top; padding: 10px;"><h4>Ты студент и хочешь заработать?
                 Стань нашим исполнителем, чтобы получить доступ к зданиям!</h4></td>
-            <td style="width:15%;padding: 10px 10px 10px 20%;"><button type="submit" class="btn btn-primary" style="text-align: center;width:350px;height:75px;"><h5>Отправить нам в жопу</h5></button></td>
+            <td style="width:15%;padding: 10px 10px 10px 20%;"><a href="{{ route('order_list') }}"><button type="submit" class="btn btn-primary" style="text-align: center;width:350px;height:75px;"><h5>Отправить нам в жопу</h5></button></a></td>
         </tr>
-</form>
+
         <tr><td style="vertical-align:top; padding-top: 225px"></td></tr>
     </table>
     <h2 style="text-align: center;">Наши преимущества</h2>
@@ -77,6 +75,8 @@
 
             <p><h4>3. Отсутствие конкуренции с профессионалами</h4></p>
         </div>
+
+    <!--
     <table><tr><td style="vertical-align:top; padding-top: 225px"></td></tr></table>
     <div id="Otzyv" style="padding: 5px; background-color: #FF6347; margin-top:15px;margin-bottom:15px;margin-left:5px;margin-right:5px;">
         <h2>Отзывы</h2>
@@ -95,9 +95,11 @@
         <p style="text-align:right;">Показать всё</p>
     </div>
     <table><tr><td style="vertical-align:top; padding-top: 225px"></td></tr></table>
+    -->
 
+    <br>
     <h3 style="text-align: center;">Вступай в нашу стаю!</h3>
-    <h5 style="text-align: center;">Остались вопросы?  Вам помогут разделы Правила и  О нас.</h5>
+    <h5 style="text-align: center;">Остались вопросы?  Вам помогут разделы <a href="{{route('rules')}}">Правила</a> и  <a href="{{route('about')}}">О нас</a>.</h5>
     <table><tr><td style="vertical-align:top; padding-top: 225px"></td></tr></table>
 
 

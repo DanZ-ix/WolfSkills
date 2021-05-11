@@ -10,22 +10,7 @@
 
     $user = Auth::user();
     $user_name = $user['nickname'];
-    $users = DB::select('select * from users');
 
-
-    if ($user['role'] == 'Zakaz')
-    {
-        $orders_requests = DB::select('select * from orders where Zakaz_ID = ? and status = 0', [Auth::id()]);
-        $orders_in_progress = DB::select('select * from orders where Zakaz_ID = ? and status = 1',[Auth::id()]);
-        $orders_done = DB::select('select * from orders where Zakaz_ID = ? and status = 2', [Auth::id()]);
-
-        $requests = DB::select('select * from orders_requests where zakaz_id = ? and accepted = 0', [Auth::id()]);
-
-    }
-    else
-        {
-        $orders = DB::select('select * from orders where IspID = ?', [Auth::id()]);
-    }
 
 @endphp
 
@@ -98,74 +83,18 @@
                 @if($user['role'] == 'Zakaz')
                     <h2>Мои задачи</h2>
 
-
-
-                <h2>Выполняются</h2>
-                @foreach($orders_in_progress as $order)
-                    @foreach( $users as $user_isp)
-                        @if($user_isp->id == $order->IspID)
-                        <div class="alert-info">
-                            <h3>{{$order->name}}</h3>
-                            <h3>{{$user_isp->email}}</h3>
-
-
-                        </div>
-
-                            @endif
-                        @endforeach
-                    @endforeach
-
-
-
-
-                @foreach($orders_requests as $order)
-                        <h2>Задача:</h2>
+                @foreach($orders as $order)
+                    <div class="alert-info">
                         <h3>{{$order->name}}</h3>
-                        <h2>Заявки: </h2>
-
-                    @foreach($requests as $request)
-                            @foreach($users as $user_isp)
-
-                            @if($user_isp->id == $request->isp_id and $request->order_id == $order->id)
+                        <a href="{{route('one_order', $order->id)}}">страница заказа</a>
 
 
-                                    <div class="alert alert-info">
-
-
-                                        <h3>{{$user_isp->nickname}}</h3>
-                                        <h3>{{$user_isp->email}}</h3>
-
-                                        <form method="POST" action="{{ route('user.button_order_choose') }}">
-                                            @csrf
-                                            <input type="hidden" class="form-control" name="isp_id" autocomplete="off" value="{{$user_isp->id}}">
-                                            <input type="hidden" class="form-control" name="zakaz_id" autocomplete="off" value="{{$user->id}}">
-                                            <input type="hidden" class="form-control" name="request_id" autocomplete="off" value="{{$request->id}}">
-                                            <input type="hidden" class="form-control" name="order_id" autocomplete="off" value="{{$order->id}}">
-
-
-                                            <button type="submit" class="btn btn-primary" name="sendMe" value="1">Выбрать исполнителя</button>
-                                        </form>
-
-                                    </div>
-
-                                                    @break
-                                                @endif
-                                            @endforeach
-                    @endforeach
-                    <br>
-                    @endforeach
-
-
-
-
-                    @foreach($orders_done as $order)
-                        <h2>{{$order->name}} Закончен</h2>
+                    </div>
+                        <br>
 
                     @endforeach
-
 
                 @endif
-
 <!--
                 <div style="margin: 25px; background-color:#d9d9db;">
 
