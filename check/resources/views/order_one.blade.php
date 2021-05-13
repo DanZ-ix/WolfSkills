@@ -5,9 +5,18 @@
     Заказ
 @endsection
 
+@php
+    use \Illuminate\Support\Facades\Auth;
+
+    $user = Auth::user();
+@endphp
+
+
+
 @section('content')
 
     <div class="alert alert-info">
+
         <h3>{{$data->name}}</h3>
         <br>
         <h4>Направление:</h4>
@@ -41,6 +50,15 @@
         </form>
 
     </div>
+
+    @if($user['role']=='Zakaz')
+        <div class="alert alert-info">
+            <h1>Выберите исполнителя вашего заказа</h1>
+
+
+
+        </div>
+    @endif
 
 
 @endsection

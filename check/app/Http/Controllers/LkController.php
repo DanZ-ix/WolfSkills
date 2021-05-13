@@ -19,7 +19,7 @@ class LkController extends Controller
         }
         else
             {
-                $requests = DB::select('select * orders_requests where isp_id = ?', [Auth::id()]);
+                $requests = DB::select('select * from orders_requests where isp_id = ?', [Auth::id()]);
 
                 $orders = DB::select('select * from orders where IspID=?', [Auth::id()]);
 

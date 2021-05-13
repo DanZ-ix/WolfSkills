@@ -32,61 +32,6 @@
   <button type="submit" class="btn btn-primary">Войти</button>
 </form>
 <br>
-<h1></h1>
-<br>
-<h1></h1>
-<br>
-<h1></h1>
-<br>
-<h1></h1>            <br>
-<h1></h1>
-<br>
-<h1></h1>
-<br>
-<h1></h1>
-<br>
-<h1></h1>            <br>
-<h1></h1>
-<br>
-<h1></h1>
-<br>
-<h1></h1>
-<br>
-<h1></h1>            <br>
-<h1></h1>
-<br>
-<h1></h1>
-<br>
-<h1></h1>
-<br>
-<h1></h1>
-<br>
-<h1></h1>
-<br>
-<h1></h1>
-<br>
-<h1></h1>
-<br>
-<h1></h1>
-<br>
-<h1></h1>
-<br>
-<h1></h1>
-<br>
-<h1></h1>
-<br>
-<h1></h1>
-<br>
-<h1></h1>
-<br>
-<h1></h1>
-<br>
-<h1></h1>
-<br>
-<h1></h1>
-<br>
-<h1></h1>
-<br>
 
 
 

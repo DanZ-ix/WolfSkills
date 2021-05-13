@@ -20,8 +20,9 @@ class OrderRequest extends Migration
             $table->integer('isp_id');
             $table->integer('zakaz_id');
             $table->integer('accepted');
-
+            $table->text('text');
             $table->timestamps();
+
 
         });
     }

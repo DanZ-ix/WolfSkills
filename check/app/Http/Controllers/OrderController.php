@@ -70,8 +70,22 @@ class OrderController extends Controller
 
     public function OneOrder($id)
     {
+
+        $user = Auth::user();
+
         $Orders = Order::all();
-        return view('order_one', ['data' => $Orders->find($id)]);
+        $ThisOrder = $Orders->find($id);
+
+        if ($ThisOrder['Zakaz_ID'] == Auth::id())
+        {
+            DB::select('select * from orders_requests where order_id=?', [$id]);
+
+
+
+        }
+
+
+        return view('order_one', ['data' => $ThisOrder]);
 
     }
 

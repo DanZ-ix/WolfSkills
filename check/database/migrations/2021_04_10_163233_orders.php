@@ -25,6 +25,7 @@ class Orders extends Migration
             $table->integer('Zakaz_ID')->nullable(true);
             $table->integer('IspID')->nullable(true);
             $table->integer('status')->nullable(true);
+            $table->text('otziv');
 
 
 
