@@ -11,7 +11,7 @@
 
     <table><tr><td style="vertical-align:top; padding-top: 225px"></td></tr></table>
 
-    <table>
+    
         @if(\Illuminate\Support\Facades\Auth::check())
             @php
                 $user = \Illuminate\Support\Facades\Auth::user();
@@ -23,43 +23,65 @@
             @endphp
 
             @if($Zakaz)
-
-                <tr>
-                        <td style="width:15%;"><a href="{{route('order')}}"><button type="submit" class="btn btn-primary" style="text-align: center;width:350px;height:75px;"><h5>Отправить нам в жопу</h5></button></a></td>
-                        <td style="vertical-align:top; padding: 10px 10px 10px 50px;"><h4>Дайте задание нашим исполнителям
-                                и получите готовую работу в срок!</h4></td>
-
-                </tr>
-                <tr><td style="vertical-align:top; padding-top: 100px"></td></tr>
+    <div class="row">
+    <div class="col">
+    <a href="{{ route('order_list') }}"><button type="submit" class="btn btn-light" style="background-color:#B8EBE2; text-align: center;width:350px;height:75px;"><h5>Отправить нам в жопу</h5></button></a>
+    </div>
+    <div class="col">
+   
+    </div>
+    <div class="col" style="text-align: right;">
+    <h4>Дайте задание нашим исполнителям
+                                и получите готовую работу в срок!</h4>
+    </div>
+  </div>
+  <table>
+  <tr><td style="vertical-align:top; padding-top: 225px"></td></tr>
+  </table>
+                
             @endif
         @else
-            <tr>
-
-
-                    <td style="width:15%;"><a href="{{route('order')}}"><button type="submit" class="btn btn-primary" style="text-align: center;width:350px;height:75px;"><h5>Отправить нам в жопу</h5></button></a></td>
-                    <td style="vertical-align:top; padding: 10px 10px 10px 20%;"><h4>Дайте задание нашим исполнителям
-                            и получите готовую работу в срок!</h4></td>
-
-            </tr>
-            <tr><td style="vertical-align:top; padding-top: 100px"></td></tr>
+        <div class="row">
+    <div class="col">
+    <a href="{{ route('order_list') }}"><button type="submit" class="btn btn-light" style="background-color:#B8EBE2; text-align: center;width:350px;height:75px;"><h5>Отправить нам в жопу</h5></button></a>
+    </div>
+    <div class="col">
+   
+    </div>
+    <div class="col" style="text-align: right;">
+    <h4>Дайте задание нашим исполнителям
+                            и получите готовую работу в срок!</h4>
+    </div>
+  </div>
+  <table>
+  <tr><td style="vertical-align:top; padding-top: 225px"></td></tr>
+  </table>
         @endif
 
-
-
-
-
-        <tr>
-
-            <td style="vertical-align:top; padding: 10px;"><h4>Ты студент и хочешь заработать?
-                Стань нашим исполнителем, чтобы получить доступ к зданиям!</h4></td>
-            <td style="width:15%;padding: 10px 10px 10px 20%;"><a href="{{ route('order_list') }}"><button type="submit" class="btn btn-primary" style="text-align: center;width:350px;height:75px;"><h5>Отправить нам в жопу</h5></button></a></td>
-        </tr>
-
-        <tr><td style="vertical-align:top; padding-top: 225px"></td></tr>
-    </table>
+    
+  <div class="row">
+    <div class="col">
+    <h4>Ты студент и хочешь заработать?
+                Стань нашим исполнителем, чтобы получить доступ к зданиям!</h4>
+    </div>
+    <div class="col">
+   
+    </div>
+    <div class="col" style="text-align: right;">
+    <a href="{{ route('order_list') }}"><button type="submit" class="btn btn-light" style="background-color:#B8EBE2; text-align: center;width:350px;height:75px;"><h5>Отправить нам в жопу</h5></button></a>
+    </div>
+  </div>
+  <div class="container">
+  </div>
+  <table>
+  <tr><td style="vertical-align:top; padding-top: 225px"></td></tr>
+  </table>
+  <div style="background-color:#B8EBE2;">
+  <br>
     <h2 style="text-align: center;">Наши преимущества</h2>
-
-    <table><tr><td style="vertical-align:top; padding-top: 100px"></td></tr></table>
+    <br>
+    </div>
+    <table><tr><td style="vertical-align:top; padding-top: 70px"></td></tr></table>
         <div style="margin: 25px;">
 
             <p><h4>1. Наш сайт - это отличный способ получить опыт и найти работодателей</h4></p>
@@ -97,9 +119,11 @@
     <table><tr><td style="vertical-align:top; padding-top: 225px"></td></tr></table>
     -->
 
-    <br>
+    <table>
+  <tr><td style="vertical-align:top; padding-top: 225px"></td></tr>
+  </table>
     <h3 style="text-align: center;">Вступай в нашу стаю!</h3>
-    <h5 style="text-align: center;">Остались вопросы?  Вам помогут разделы <a href="{{route('rules')}}">Правила</a> и  <a href="{{route('about')}}">О нас</a>.</h5>
+    <h5 style="text-align: center;">Остались вопросы?  Вам помогут разделы <a href="{{route('rules')}}" style="color: #007F85;">Правила</a> и  <a href="{{route('about')}}" style="color: #007F85;">О нас</a>.</h5>
     <table><tr><td style="vertical-align:top; padding-top: 225px"></td></tr></table>
 
 

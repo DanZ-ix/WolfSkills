@@ -14,10 +14,10 @@
 
 <h2 style="text-align: center;">
 <div class="btn-group btn-group-toggle" data-toggle="buttons">
-  <label class="btn btn-primary active">
+  <label class="btn btn-light active" style="background-color: #B8EBE2;">
       <input type="radio" name="role" id="option2" value="Isp" autocomplete="on" checked> Я исполнитель
   </label>
-  <label class="btn btn-primary">
+  <label class="btn btn-light" style="background-color: #B8EBE2;">
 
       <input type="radio" name="role" id="option1" value="Zakaz" autocomplete="on" > Я заказчик
   </label>
@@ -26,8 +26,8 @@
 
 
 <div class="form-group">
-    <label for="nickname">Ваше имя</label>
-    <input type="text" class="form-control" id="nickname" name="nickname" autocomplete="off" aria-describedby="nicknameHelp" value="" placeholder="Введите nickname">
+    <label for="nickname">Ваше ФИО</label>
+    <input type="text" class="form-control" id="nickname" name="nickname" autocomplete="off" aria-describedby="nicknameHelp" value="" placeholder="Введите ФИО">
     <br>
 
     <label for="city">Город</label>
@@ -47,7 +47,7 @@
 
         <div class="form-group">
             <label for="email">Электронная почта</label>
-            <input type="email" class="form-control" id="email" name="email" value="" placeholder="email">
+            <input type="email" class="form-control" id="email" name="email" value="" placeholder="E-mail">
             @error('email')
             <div class="alert alert alert-danger"> {{ $message }}</div>
             @enderror
@@ -62,6 +62,6 @@
   </div>
 
   
-  <button type="submit" class="btn btn-primary byn-primary" name="sendMe" value="1">Создать</button>
+  <button type="submit" class="btn btn-light byn-primary" style="background-color: #B8EBE2;" name="sendMe" value="1">Создать</button>
 </form>
 @endsection
