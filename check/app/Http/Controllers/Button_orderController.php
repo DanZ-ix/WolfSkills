@@ -12,7 +12,8 @@ class Button_orderController extends Controller
     public function submit(Request $req)
     {
         $userID = Auth::id();
-        DB::insert('insert into orders_requests (order_id, isp_id, zakaz_id, accepted, text) value (?, ?, ?, ?, ?)', [$req['id'],  $userID, $req['Zakaz_ID'], 0, ' ']);
+        //dd($req['rec']);
+        DB::insert('insert into orders_requests (order_id, isp_id, zakaz_id, accepted, text, order_name) value (?, ?, ?, ?, ?, ?)', [$req['id'],  $userID, $req['Zakaz_ID'], 0, $req['rec'], $req['order_name'] ]);
 
 
         return redirect()->route('user.lk');

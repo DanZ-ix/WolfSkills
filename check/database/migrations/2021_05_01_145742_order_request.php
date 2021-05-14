@@ -17,6 +17,7 @@ class OrderRequest extends Migration
         {
             $table->increments('id');
             $table->integer('order_id');
+            $table->string('order_name', 255);
             $table->integer('isp_id');
             $table->integer('zakaz_id');
             $table->integer('accepted');

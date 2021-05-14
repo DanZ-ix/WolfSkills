@@ -48,14 +48,27 @@
         <h5>{{$data->cost}}</h5>
 
         @if($user['role']=='Isp')
+
+            @if($request[0] == null)
+
             <form method="POST" action="{{ route('user.button_order_list') }}">
             @csrf
+                <h3>
+                    <textarea name="rec"  autocomplete="off"  rows="10" cols="45" class="form-control" aria-describedby="ContactsHelp" placeholder="Напишите, почему должны выбрать именно вас"></textarea>
+                </h3>
             <input type="hidden" class="form-control" id="nickname" name="id" autocomplete="off" aria-describedby="nicknameHelp" value="{{$data->id}}">
             <input type="hidden" class="form-control" id="nickname" name="Zakaz_ID" autocomplete="off" aria-describedby="nicknameHelp" value="{{$data->Zakaz_ID}}">
+                <input type="hidden" class="form-control" id="nickname" name="order_name" autocomplete="off" aria-describedby="nicknameHelp" value="{{$data->name}}">
 
             <button type="submit" class="btn btn-primary" name="sendMe" value="1">Подать заявку</button>
-        </form>
+            </form>
+
+            @else
+                <h3>Вы уже подали заявку на этот заказ</h3>
+
+             @endif
         @endif
+
 
 
     </div>
@@ -73,7 +86,7 @@
                         <h3>{{$isp->uni}}</h3>
                         <h3>{{$isp->direction}}</h3>
                         <br>
-                        <h3>request['text']</h3>
+                        <h3>{{$request->text}}</h3>
                         <br>
 
                         <form method="POST" action="{{ route('user.button_order_choose') }}">

@@ -21,7 +21,7 @@ class LkController extends Controller
             {
                 $requests = DB::select('select * from orders_requests where isp_id = ?', [Auth::id()]);
 
-                $orders = DB::select('select * from orders where IspID=?', [Auth::id()]);
+                $orders = DB::select('select * from orders');
 
                 return view('profile',['orders' => $orders, 'requests' => $requests]);
             }

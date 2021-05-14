@@ -75,6 +75,9 @@ class OrderController extends Controller
 
         $Orders = Order::all();
         $ThisOrder = $Orders->find($id);
+        $request = DB::select('select * from orders_requests where order_id = ? and isp_id = ?', [$ThisOrder->id, $user['id']]);
+
+        //dd($request[0]);
 
         if ($ThisOrder['Zakaz_ID'] == Auth::id())
         {
@@ -85,7 +88,7 @@ class OrderController extends Controller
         }
 
 
-        return view('order_one', ['data' => $ThisOrder]);
+        return view('order_one', ['data' => $ThisOrder, 'request' => $request]);
 
     }
 
@@ -121,10 +124,14 @@ class OrderController extends Controller
     Я вполне понимаю что данным сообщением вызову дополнительный интерес, но хочу сразу предостеречь пытливых - стоп.
     Остальных просто не найдут.
 */
-        foreach($orders as $ord)
-        {
-            $order = $ord;
-        }
+
+        $order = $orders[0];
+
+
+        //foreach($orders as $ord)
+        //{
+         //   $order = $ord;
+        //}
 
         foreach($users as $user)
         {
@@ -136,10 +143,8 @@ class OrderController extends Controller
             }
 
         }
-        foreach($R as $r)
-        {
-            $rating = $r;
-        }
+
+        $rating = $R[0];
 
         $rating = $rating->rating + (100 * intval($req['rating'])) - 250;
 

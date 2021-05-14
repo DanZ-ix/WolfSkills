@@ -11,7 +11,7 @@
 
     <table><tr><td style="vertical-align:top; padding-top: 225px"></td></tr></table>
 
-    
+
         @if(\Illuminate\Support\Facades\Auth::check())
             @php
                 $user = \Illuminate\Support\Facades\Auth::user();
@@ -25,10 +25,10 @@
             @if($Zakaz)
     <div class="row">
     <div class="col">
-    <a href="{{ route('order_list') }}"><button type="submit" class="btn btn-light" style="background-color:#B8EBE2; text-align: center;width:350px;height:75px;"><h5>Отправить нам в жопу</h5></button></a>
+    <a href="{{ route('order') }}"><button type="submit" class="btn btn-light" style="background-color:#B8EBE2; text-align: center;width:350px;height:75px;"><h5>Стать заказчиком</h5></button></a>
     </div>
     <div class="col">
-   
+
     </div>
     <div class="col" style="text-align: right;">
     <h4>Дайте задание нашим исполнителям
@@ -38,15 +38,15 @@
   <table>
   <tr><td style="vertical-align:top; padding-top: 225px"></td></tr>
   </table>
-                
+
             @endif
         @else
         <div class="row">
     <div class="col">
-    <a href="{{ route('order_list') }}"><button type="submit" class="btn btn-light" style="background-color:#B8EBE2; text-align: center;width:350px;height:75px;"><h5>Отправить нам в жопу</h5></button></a>
+    <a href="{{ route('order') }}"><button type="submit" class="btn btn-light" style="background-color:#B8EBE2; text-align: center;width:350px;height:75px;"><h5>Стать заказчиком</h5></button></a>
     </div>
     <div class="col">
-   
+
     </div>
     <div class="col" style="text-align: right;">
     <h4>Дайте задание нашим исполнителям
@@ -58,17 +58,17 @@
   </table>
         @endif
 
-    
+
   <div class="row">
     <div class="col">
     <h4>Ты студент и хочешь заработать?
                 Стань нашим исполнителем, чтобы получить доступ к зданиям!</h4>
     </div>
     <div class="col">
-   
+
     </div>
     <div class="col" style="text-align: right;">
-    <a href="{{ route('order_list') }}"><button type="submit" class="btn btn-light" style="background-color:#B8EBE2; text-align: center;width:350px;height:75px;"><h5>Отправить нам в жопу</h5></button></a>
+    <a href="{{ route('order_list') }}"><button type="submit" class="btn btn-light" style="background-color:#B8EBE2; text-align: center;width:350px;height:75px;"><h5>Стать исполнителем</h5></button></a>
     </div>
   </div>
   <div class="container">
