@@ -45,7 +45,7 @@ class OrderController extends Controller
         $contact-> status = 0;   //0 - нет исполнителя
                                     //1 - в процессе выполнения
                                     //2 - Выполнен
-
+        $contact->otziv = '';
 
         $contact->save();
 
@@ -78,9 +78,9 @@ class OrderController extends Controller
 
         if ($ThisOrder['Zakaz_ID'] == Auth::id())
         {
-            DB::select('select * from orders_requests where order_id=?', [$id]);
+            $requests = DB::select('select * from orders_requests where order_id=? and accepted = 0', [$id]);
 
-
+            return view('order_one', ['data' => $ThisOrder, 'requests' => $requests]);
 
         }
 
@@ -88,5 +88,71 @@ class OrderController extends Controller
         return view('order_one', ['data' => $ThisOrder]);
 
     }
+
+
+    public function OrderReady(Request $req)
+    {
+
+        $order_id = $req['order_id'];
+
+        return view('order_ready', ['data' => $order_id]);
+
+
+    }
+
+    public function OrderReadyPost(Request $req)
+    {
+        $order_id = $req['order_id'];
+
+        DB::update('update orders set status=2 where id=?', [$order_id]);
+        DB::update('update orders set otziv = ? where id = ?', [$req['review'], $order_id]);
+
+
+        $users = DB::select('select * from users');
+        $orders = DB::select('select * from orders where id=?', [$order_id]);
+
+
+
+/*
+ * Хочешь фиксануть все что дальше?
+        Ребята не стоит вскрывать эту тему. Вы молодые, шутливые,
+        вам все легко. Это не то. Это не Чикатило и даже не архивы спецслужб.
+    Сюда лучше не лезть. Серьезно, любой из вас будет жалеть. Лучше закройте тему и забудьте что тут писалось.
+    Я вполне понимаю что данным сообщением вызову дополнительный интерес, но хочу сразу предостеречь пытливых - стоп.
+    Остальных просто не найдут.
+*/
+        foreach($orders as $ord)
+        {
+            $order = $ord;
+        }
+
+        foreach($users as $user)
+        {
+            if($user->id == $order->IspID)
+            {
+                $isp_id = $user->id;
+                $R = DB::select('select rating from users where id = ?', [$user->id]);
+
+            }
+
+        }
+        foreach($R as $r)
+        {
+            $rating = $r;
+        }
+
+        $rating = $rating->rating + (100 * intval($req['rating'])) - 250;
+
+        DB::update('update users set rating = ? where id = ?', [$rating, $isp_id]);
+
+        return redirect()->to(route('user.lk'));
+
+        //КОСТЫЛЬ НА КОСТЫЛЕ И КОСТЫЛЕМ ПОГОНЯЕТ,
+
+
+
+
+    }
+
 
 }

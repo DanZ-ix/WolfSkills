@@ -7,8 +7,13 @@
 
 @php
     use \Illuminate\Support\Facades\Auth;
-
+    use \Illuminate\Support\Facades\DB;
     $user = Auth::user();
+
+    $users = DB::select('select * from users');
+
+
+
 @endphp
 
 
@@ -41,23 +46,82 @@
         <br>
         <h4>Цена:</h4>
         <h5>{{$data->cost}}</h5>
-        <form method="POST" action="{{ route('user.button_order_list') }}">
+
+        @if($user['role']=='Isp')
+            <form method="POST" action="{{ route('user.button_order_list') }}">
             @csrf
             <input type="hidden" class="form-control" id="nickname" name="id" autocomplete="off" aria-describedby="nicknameHelp" value="{{$data->id}}">
             <input type="hidden" class="form-control" id="nickname" name="Zakaz_ID" autocomplete="off" aria-describedby="nicknameHelp" value="{{$data->Zakaz_ID}}">
 
             <button type="submit" class="btn btn-primary" name="sendMe" value="1">Подать заявку</button>
         </form>
+        @endif
+
 
     </div>
 
     @if($user['role']=='Zakaz')
+
+        @if($data->status == 0)
         <div class="alert alert-info">
             <h1>Выберите исполнителя вашего заказа</h1>
+            @foreach($requests as $request)
+                @foreach($users as $isp)
+                    @if($isp->id==$request->isp_id)
 
+                        <h3>{{$isp->nickname}}</h3>
+                        <h3>{{$isp->uni}}</h3>
+                        <h3>{{$isp->direction}}</h3>
+                        <br>
+                        <h3>request['text']</h3>
+                        <br>
+
+                        <form method="POST" action="{{ route('user.button_order_choose') }}">
+                            @csrf
+                            <input type="hidden" class="form-control" name="isp_id" autocomplete="off" value="{{$isp->id}}">
+                            <input type="hidden" class="form-control" name="zakaz_id" autocomplete="off" value="{{$user->id}}">
+                            <input type="hidden" class="form-control" name="request_id" autocomplete="off" value="{{$request->id}}">
+                            <input type="hidden" class="form-control" name="order_id" autocomplete="off" value="{{$request->order_id}}">
+
+
+                            <button type="submit" class="btn btn-primary" name="sendMe" value="1">Выбрать исполнителя</button>
+                        </form>
+
+                    @endif
+
+                @endforeach
+
+            @endforeach
 
 
         </div>
+
+
+            @endif
+
+        @if($data->status==1)
+            <h1> Заказ выполняется исполнителем</h1>
+            @foreach($users as $isp)
+
+                @if($isp->id == $data->IspID)
+
+                    <h2> {{$isp->nickname}} </h2>
+                @endif
+            @endforeach
+            <form method="POST" action="{{ route('OrderReady') }}" >
+                @csrf
+                <input type="hidden" class="form-control" name="order_id" autocomplete="off" value="{{$data->id}}">
+
+
+                <button type="submit" class="btn btn-primary" name="sendMe" value="1">Заказ выполнен</button>
+            </form>
+
+        @endif
+
+
+        @if($data->status==2)
+            <h1> Заказ выполнен</h1>
+        @endif
     @endif
 
 

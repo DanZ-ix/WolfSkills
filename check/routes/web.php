@@ -35,6 +35,10 @@ Route::get('/order_list/all/{napr}', [OrderController::class, 'GetOrdersNapr'])-
 Route::get('/order', function () {return view('order');})->middleware('auth')->name(('order'));
 Route::post('/order_submit', [OrderController::class, 'submit'])->name('order_submit');
 Route::get('/order_list/{id}', [OrderController::class, 'OneOrder'])->name('one_order');
+
+Route::post('/ready', [OrderController::class, 'OrderReady'])->name('OrderReady');
+Route::post('/ready/post', [OrderController::class, 'OrderReadyPost'])->name('OrderReadyPost');
+
 //endregion
 
 //РЕГИСТРАЦИЯ И ЛОГИН
