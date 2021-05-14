@@ -14,7 +14,7 @@
     <title>@yield('title')</title>
 </head>
 <body style="
-            background-image: url('{{ asset('content/images/profiles/fon2.png') }}');
+            background-image: url('{{ asset('content/images/profiles/fon2.svg') }}');
 
             background-size: cover;
             background-repeat: no-repeat;

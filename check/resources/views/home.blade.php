@@ -25,7 +25,7 @@
             @if($Zakaz)
     <div class="row">
     <div class="col">
-    <a href="{{ route('order') }}"><button type="submit" class="btn btn-light" style="background-color:#B8EBE2; text-align: center;width:350px;height:75px;"><h5>Стать заказчиком</h5></button></a>
+    <a href="{{ route('order') }}"><button type="submit" class="btn btn-light" style="background-color:#8CEFEE; text-align: center;width:350px;height:75px;"><h5>Стать заказчиком</h5></button></a>
     </div>
     <div class="col">
 
@@ -43,7 +43,7 @@
         @else
         <div class="row">
     <div class="col">
-    <a href="{{ route('order') }}"><button type="submit" class="btn btn-light" style="background-color:#B8EBE2; text-align: center;width:350px;height:75px;"><h5>Стать заказчиком</h5></button></a>
+    <a href="{{ route('order') }}"><button type="submit" class="btn btn-light" style="background-color:#8CEFEE; text-align: center;width:350px;height:75px;"><h5>Стать заказчиком</h5></button></a>
     </div>
     <div class="col">
 
@@ -68,7 +68,7 @@
 
     </div>
     <div class="col" style="text-align: right;">
-    <a href="{{ route('order_list') }}"><button type="submit" class="btn btn-light" style="background-color:#B8EBE2; text-align: center;width:350px;height:75px;"><h5>Стать исполнителем</h5></button></a>
+    <a href="{{ route('order_list') }}"><button type="submit" class="btn btn-light" style="background-color:#8CEFEE; text-align: center;width:350px;height:75px;"><h5>Стать исполнителем</h5></button></a>
     </div>
   </div>
   <div class="container">
@@ -76,7 +76,7 @@
   <table>
   <tr><td style="vertical-align:top; padding-top: 225px"></td></tr>
   </table>
-  <div style="background-color:#B8EBE2;">
+  <div style="background-color:#8CEFEE;">
   <br>
     <h2 style="text-align: center;">Наши преимущества</h2>
     <br>

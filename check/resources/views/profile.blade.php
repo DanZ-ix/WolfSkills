@@ -107,7 +107,7 @@
 
                         <h3>{{$request->order_name}}</h3>
                         <br>
-                        <a href="{{route('one_order', $orders[$request->order_id - 1]->id)}}"> <button class="btn btn-success">страница заказа</button></a>
+                        <a href="{{route('one_order', $orders[$request->order_id - 1]->id)}}"> <button class="btn btn-light " style="background-color: #8CEFEE;">Страница заказа</button></a>
 
                         @if($orders[$request->order_id - 1]->status == 2 and $request->isp_id == $user['id'])
                             <h3>Вы выполнили этот заказ</h3>

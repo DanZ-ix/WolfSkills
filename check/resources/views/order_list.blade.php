@@ -8,16 +8,16 @@
 @section('content')
     <div class="row">
         <div class="col-sm" style="text-align: center">
-        <a href="{{route('order_list')}}"><button class="btn btn-warning">Все заказы</button></a>
+        <a href="{{route('order_list')}}"><button class="btn btn-light byn-primary" style="background-color: #8CEFEE;">Все заказы</button></a>
     </div>
     <div class="col-sm" style="text-align: center">
-        <a href="{{route('order_list_napr', 'design')}}"><button class="btn btn-warning">Дизайн</button></a>
+        <a href="{{route('order_list_napr', 'design')}}"><button class="btn btn-light byn-primary" style="background-color: #8CEFEE;">Дизайн</button></a>
     </div>
     <div class="col-sm" style="text-align: center">
-        <a href="{{route('order_list_napr', 'programming')}}"><button class="btn btn-warning">Программирование</button></a>
+        <a href="{{route('order_list_napr', 'programming')}}"><button class="btn btn-light byn-primary" style="background-color: #8CEFEE;">Программирование</button></a>
     </div>
     <div class="col-sm" style="text-align: center">
-        <a href="{{route('order_list_napr', 'elda')}}"><button class="btn btn-warning">ЕЛДА</button></a>
+        <a href="{{route('order_list_napr', 'elda')}}"><button class="btn btn-light byn-primary" style="background-color: #8CEFEE;">ЕЛДА</button></a>
     </div>
     </div>
     <br>
@@ -35,7 +35,7 @@
             <h4>Цена:</h4>
             <h5>{{$elem->cost}}</h5>
             <br>
-            <a href="{{route('one_order', $elem->id)}}"><button class="btn btn-primary">Детальнее</button></a>
+            <a href="{{route('one_order', $elem->id)}}"><button class="btn btn-light" style="background-color: #8CEFEE;">Детальнее</button></a>
 
         </div>
 

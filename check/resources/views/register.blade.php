@@ -14,10 +14,10 @@
 
 <h2 style="text-align: center;">
 <div class="btn-group btn-group-toggle" data-toggle="buttons">
-  <label class="btn btn-light active" style="background-color: #B8EBE2;">
+  <label class="btn btn-light active" style="background-color: #8CEFEE;">
       <input type="radio" name="role" id="option2" value="Isp" autocomplete="on" checked> Я исполнитель
   </label>
-  <label class="btn btn-light" style="background-color: #B8EBE2;">
+  <label class="btn btn-light" style="background-color: #8CEFEE;">
 
       <input type="radio" name="role" id="option1" value="Zakaz" autocomplete="on" > Я заказчик
   </label>
@@ -61,7 +61,7 @@
       @enderror
   </div>
 
-  
-  <button type="submit" class="btn btn-light byn-primary" style="background-color: #B8EBE2;" name="sendMe" value="1">Создать</button>
+
+  <button type="submit" class="btn btn-light byn-primary" style="background-color: #8CEFEE;" name="sendMe" value="1">Создать</button>
 </form>
 @endsection
