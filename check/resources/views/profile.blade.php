@@ -21,33 +21,10 @@
 
                 <h2 style="text-align: center">Исполнитель</h2>
 
-                <h3 id="rating" style="text-align:center;">Рейтинг</h3>
-                @if(round($user['stars']) == 0)
-                    <h3 id="rating" style="text-align:center;">Нет рейтинга</h3>
-                @endif
-
-                @if(round($user['stars']) == 1)
-                    <h3 id="rating" style="text-align:center;">*</h3>
-                @endif
-
-                @if(round($user['stars']) == 2)
-                    <h3 id="rating" style="text-align:center;">**</h3>
-                @endif
-
-                @if(round($user['stars']) == 3)
-                    <h3 id="rating" style="text-align:center;">***</h3>
-                @endif
-
-                @if(round($user['stars']) == 4)
-                    <h3 id="rating" style="text-align:center;">****</h3>
-                @endif
-
-                @if(round($user['stars']) == 5)
-                    <h3 id="rating" style="text-align:center;">*****</h3>
-                @endif
 
 
-                <h3 id="mmr" style="text-align:center;">Очки</h3>
+
+                <h3 id="mmr" style="text-align:center;">Рейтинг</h3>
                 <h3 id="rating" style="text-align:center;">{{$user['rating']}}</h3>
             @endif
 

@@ -60,7 +60,8 @@
             </div>
 
 
-            <button type="submit" class="btn btn-primary">Отправить</button>
+            <button type="submit" class="btn btn-light"  style="background-color:#ceffff; text-align: center;border: 1px solid #000;"><b>Отправить</b></button>
+
             <br>
             <h1></h1>
             <br>

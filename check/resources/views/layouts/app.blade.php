@@ -12,6 +12,7 @@
     <script src="{{ asset('/js/app.js') }}"></script> <!-- корневой файл app js -->
     <script src="{{ asset('/js/bootstrap.js') }}"></script> <!-- бутстраповский джиэс -->
     <title>@yield('title')</title>
+    <style>@yield('style')</style>
 </head>
 <body style="
             background-image: url('{{ asset('content/images/profiles/fon2.svg') }}');
@@ -20,44 +21,45 @@
             background-repeat: no-repeat;
           ">
 <header>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light" style="height: 150px; background-color:#ceffff;">
 
-  <a class="navbar-brand" href="#">W<img src="content\images\profiles\tvoieblet.jpg" style=  "vertical-align: middle; border-radius: 20px; width:25px; height:100%;">LFSKILLS</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link" href="{{route('home')}}">Главная<span class="sr-only">(current)</span></a>
+        <a class="navbar-brand" href="#"><h1><img src="content\images\profiles\volk.png" style=  "vertical-align: middle; width:110px; height:60px;"><img src="content\images\profiles\wolf.svg" style=  "vertical-align: middle; width:250px; height:170px;"></h1></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="{{route('home')}}"><h5>Главная</h5><span class="sr-only">(current)</span></a>
 
-      <a class="nav-item nav-link" href="{{route('about')}}">О нас</a>
-        <a class="nav-item nav-link" href="{{route('rules')}}">Правила</a>
+                <a class="nav-item nav-link" href="{{route('about')}}"><h5>О нас</h5></a>
+                <a class="nav-item nav-link" href="{{route('rules')}}"><h5>Правила</h5></a>
 
-        @if(\Illuminate\Support\Facades\Auth::check())
-            @php
-                $user = \Illuminate\Support\Facades\Auth::user();
+                @if(\Illuminate\Support\Facades\Auth::check())
+                    @php
+                        $user = \Illuminate\Support\Facades\Auth::user();
 
-                if ($user['role'] == 'Zakaz')
-                    $Zakaz = True;
-                else
-                    $Zakaz = False;
-            @endphp
+                        if ($user['role'] == 'Zakaz')
+                            $Zakaz = True;
+                        else
+                            $Zakaz = False;
+                    @endphp
 
-            @if($Zakaz)
-                <a class="nav-item nav-link" href="{{route('order')}}">Разместить заказ</a>
-            @endif
+                    @if($Zakaz)
+                        <a class="nav-item nav-link" href="{{route('order')}}"><h5>Разместить заказ</h5></a>
+                    @endif
 
 
-      <a class="nav-item nav-link" href="{{route('user.lk')}}">Личный кабинет</a>
-            <a class="nav-item nav-link" href="{{route('order_list')}}">Заказы</a>
-            <a class="nav-item nav-link" href="{{route('user.logout')}}">Выйти</a>
-        @else
-      <a class="nav-item nav-link" href="{{route('user.login')}}">Логин</a>
-      <a class="nav-item nav-link" href="{{route('user.register')}}">Регистрация</a>
-        @endif
-    </div>
-  </div>
-</nav>
+                    <a class="nav-item nav-link" href="{{route('user.lk')}}"><h5>Личный кабинет</h5></a>
+                    <a class="nav-item nav-link" href="{{route('order_list')}}"><h5>Заказы</h5></a>
+                    <a class="nav-item nav-link navbar-toggler-right" href="{{route('user.logout')}}" ><h5 >Выйти</h5></a>
+                @else
+                    <a class="nav-item nav-link" href="{{route('user.login')}}"><h5>Логин</h5></a>
+                    <a class="nav-item nav-link" href="{{route('user.register')}}"><h5>Регистрация</h5></a>
+                @endif
+            </div>
+        </div>
+    </nav>
+
 </header>
 
 
@@ -71,6 +73,7 @@
                           background-attachment: fixed;
                             Overflow:hidden;
                         ">
+
                         @yield('content')
                         </section>
 

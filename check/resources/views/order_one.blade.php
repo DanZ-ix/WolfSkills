@@ -15,20 +15,22 @@
 
 
 @endphp
-
+@section('style')
+    .dick {background-color:#ceffff;border-radius: 10px;}
+@endsection
 
 
 @section('content')
 
 
 
-
+<div style="padding-bottom: 40px; padding-top: 40px;">
     <div class="alert alert-info">
         <div class="row">
             <div class="col" style="text-align: center;"><h3>{{$data->name}}</h3>
             </div>
         </div>
-        <div class="row" style="background-color: #8CEFEE;">
+        <div class="row dick">
             <div class="col"><h4>Направление:</h4>
                 @if($data->napravlenie=='design')
                     <h5>Дизайн</h5>
@@ -63,7 +65,7 @@
 
         @if($user['role']=='Isp')
 
-            @if($request[0] == null)
+            @if($request == null)
 
             <form method="POST" action="{{ route('user.button_order_list') }}">
             @csrf
@@ -74,7 +76,7 @@
             <input type="hidden" class="form-control" id="nickname" name="Zakaz_ID" autocomplete="off" aria-describedby="nicknameHelp" value="{{$data->Zakaz_ID}}">
                 <input type="hidden" class="form-control" id="nickname" name="order_name" autocomplete="off" aria-describedby="nicknameHelp" value="{{$data->name}}">
 
-            <button type="submit" class="btn btn-light byn-primary" style="background-color: #8CEFEE;" name="sendMe" value="1">Подать заявку</button>
+            <button type="submit" class="btn btn-light byn-primary" style="background-color:#ceffff; text-align: center;border: 1px solid #000;" name="sendMe" value="1">Подать заявку</button>
 
             </form>
 
@@ -87,10 +89,11 @@
 
 
     </div>
-
+</div>
     @if($user['role']=='Zakaz')
 
         @if($data->status == 0)
+            <div style="padding-bottom: 40px; padding-top: 40px;">
         <div class="alert alert-info">
             <h1>Выберите исполнителя вашего заказа</h1>
             @foreach($requests as $request)
@@ -112,7 +115,7 @@
                             <input type="hidden" class="form-control" name="order_id" autocomplete="off" value="{{$request->order_id}}">
 
 
-                            <button type="submit" class="btn btn-light byn-primary" style="background-color: #8CEFEE;" name="sendMe" value="1">Выбрать исполнителя</button>
+                            <button type="submit" class="btn btn-light byn-primary" style="background-color:#ceffff; text-align: center;border: 1px solid #000;" name="sendMe" value="1">Выбрать исполнителя</button>
                         </form>
 
                     @endif
@@ -124,7 +127,7 @@
 
         </div>
 
-
+            </div>
             @endif
 
         @if($data->status==1)
@@ -141,7 +144,7 @@
                 <input type="hidden" class="form-control" name="order_id" autocomplete="off" value="{{$data->id}}">
 
 
-                <button type="submit" class="btn btn-light byn-primary" style="background-color: #8CEFEE;" name="sendMe" value="1">Заказ выполнен</button>
+                <button type="submit" class="btn btn-light byn-primary" style="background-color:#ceffff; text-align: center;border: 1px solid #000;" name="sendMe" value="1">Заказ выполнен</button>
             </form>
 
         @endif
