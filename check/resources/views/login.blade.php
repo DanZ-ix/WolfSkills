@@ -29,7 +29,7 @@
       <div class="alert alert alert-danger"> {{ $message }}</div>
       @enderror
   </div>
-  <button type="submit" class="btn btn-light" style="background-color: #8CEFEE;">Войти</button>
+  <button type="submit" class="btn btn-light" style="background-color:#ceffff; text-align: center; border: 1px solid #000;">Войти</button>
 </form>
 <br>
 

@@ -31,7 +31,7 @@
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="{{route('home')}}"><h5>Главная</h5><span class="sr-only">(current)</span></a>
 
-                <a class="nav-item nav-link" href="{{route('about')}}"><h5>О нас</h5></a>
+
                 <a class="nav-item nav-link" href="{{route('rules')}}"><h5>Правила</h5></a>
 
                 @if(\Illuminate\Support\Facades\Auth::check())
