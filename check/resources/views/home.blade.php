@@ -120,6 +120,7 @@
     <h3 style="text-align: center;">Вступай в нашу стаю!</h3>
     <h5 style="text-align: center;">Остались вопросы?  Вам помогут разделы <a href="{{route('rules')}}" style="color: #007F85;">Правила</a> и  <a href="{{route('about')}}" style="color: #007F85;">О нас</a>.</h5>
     <table><tr><td style="vertical-align:top; padding-top: 225px"></td></tr></table>
+    <img src="content\images\форма.jpg">
 
 
 

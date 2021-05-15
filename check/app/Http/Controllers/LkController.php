@@ -23,7 +23,9 @@ class LkController extends Controller
 
                 $orders = DB::select('select * from orders');
 
-                return view('profile',['orders' => $orders, 'requests' => $requests]);
+                $users = DB::select('select * from users');
+
+                return view('profile',['orders' => $orders, 'requests' => $requests, 'users' => $users]);
             }
 
 
