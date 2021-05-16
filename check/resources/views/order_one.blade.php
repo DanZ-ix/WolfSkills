@@ -27,7 +27,7 @@
 <div style="padding-bottom: 40px; padding-top: 40px;">
     <div class="alert alert-info">
         <div class="row">
-            <div class="col" style="text-align: center;"><h3>{{$data->name}}</h3>
+            <div class="col" style="text-align: center; padding-bottom: 40px;"><h3>{{$data->name}}</h3>
             </div>
         </div>
         <div class="row dick">
@@ -42,10 +42,10 @@
                     <h5>Елда</h5>
                 @endif
             </div>
-            <div class="col" style="text-align: right;"><h4><img src="content\images\profiles\time.svg">Сроки:</h4>
+            <div class="col" style="text-align: right;"><h4><img src="{{Asset('content\images\profiles\timer.svg')}}"> &nbsp; Сроки:</h4>
                 <h5>{{$data->deadline}}</h5>
             </div>
-            <div class="col" style="text-align: right;"><h4><img src="content\images\profiles\coin.svg">Цена:</h4>
+            <div class="col" style="text-align: right;"><h4><img src="{{Asset('content\images\profiles\coin.svg')}}"> &nbsp; Цена:</h4>
                 <h5>{{$data->cost}}</h5>
             </div>
         </div>

@@ -22,8 +22,8 @@
           ">
 <header>
     <nav class="navbar navbar-expand-lg navbar-light" style="height: 150px; background-color:#ceffff;">
-
-        <a class="navbar-brand" href="#"><h1><img src="content\images\profiles\volk.png" style=  "vertical-align: middle; width:110px; height:60px;"><img src="content\images\profiles\wolf.svg" style=  "vertical-align: middle; width:250px; height:170px;"></h1></a>
+    
+        <a class="navbar-brand" href="#"><h1><img src="{{Asset('content\images\profiles\volk.png')}}" style=  "vertical-align: middle; width:110px; height:60px;"><img src="{{Asset('content\images\profiles\wolf.svg')}}" style=  "vertical-align: middle; width:250px; height:170px;"></h1></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
