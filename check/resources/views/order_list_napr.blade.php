@@ -18,7 +18,7 @@
             <a href="{{route('order_list_napr', 'programming')}}"><button class="btn btn-light" style="background-color:#ceffff; text-align: center; border: 1px solid #000;">Программирование</button></a>
         </div>
         <div class="col-sm" style="text-align: center">
-            <a href="{{route('order_list_napr', 'elda')}}"><button class="btn btn-light" style="background-color:#ceffff; text-align: center; border: 1px solid #000;">ЕЛДА</button></a>
+            <a href="{{route('order_list_napr', 'elda')}}"><button class="btn btn-light" style="background-color:#ceffff; text-align: center; border: 1px solid #000;">Другое</button></a>
         </div>
     </div>
     <br>
@@ -37,7 +37,7 @@
                 <h5>Программирование</h5>
             @endif
             @if($elem->napravlenie=='elda')
-                <h5>Елда</h5>
+                <h5>Другое</h5>
             @endif
             <br>
             <h4>Сроки:</h4>

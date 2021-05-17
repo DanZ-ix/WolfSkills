@@ -28,7 +28,7 @@
                 <select id="country" name="napravlenie">
                     <option value="design">Дизайн</option>
                     <option value="programming">Программирование</option>
-                    <option value="elda">Елда</option>
+                    <option value="elda">Другое</option>
                 </select>
             </div>
             <h3>

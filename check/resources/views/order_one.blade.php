@@ -39,7 +39,7 @@
                     <h5>Программирование</h5>
                 @endif
                 @if($data->napravlenie=='elda')
-                    <h5>Елда</h5>
+                    <h5>Другое</h5>
                 @endif
             </div>
             <div class="col" style="text-align: right;"><h4><img src="{{Asset('content\images\profiles\timer.svg')}}"> &nbsp; Сроки:</h4>

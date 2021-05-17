@@ -34,11 +34,11 @@
     <input type="text" class="form-control" id="city" name="city" autocomplete="off"  value="" placeholder="Введите ваш город">
     <br>
 
-    <label for="uni">Университет</label>
+    <label for="uni">Университет \ Компания</label>
     <input type="text" class="form-control" id="uni" name="uni" autocomplete="off"  value="" placeholder="Введите ваш университет">
     <br>
 
-    <label for="direction">Направление обучения</label>
+    <label for="direction">Направление обучения \ Должность</label>
     <input type="text" class="form-control" id="direction" name="direction" autocomplete="off"  value="" placeholder="Введите ваше направление обучения">
     <br>
 
