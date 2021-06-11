@@ -41,3 +41,124 @@ SUKA BLEAD' в коммерческой разработке(либо же лю�
 
 
 Окэй, ссаными тряпками не бью, пока так, немного описанными. в .gitignore который в руте laravel укажи этот файл
+
+
+                <h3 id="rating" style="text-align:center;">Рейтинг</h3>
+                @if(round($user['stars']) == 0)
+                    <h3 id="rating" style="text-align:center;">Нет рейтинга</h3>
+                @endif
+
+                @if(round($user['stars']) == 1)
+                    <h3 id="rating" style="text-align:center;">*</h3>
+                @endif
+
+                @if(round($user['stars']) == 2)
+                    <h3 id="rating" style="text-align:center;">**</h3>
+                @endif
+
+                @if(round($user['stars']) == 3)
+                    <h3 id="rating" style="text-align:center;">***</h3>
+                @endif
+
+                @if(round($user['stars']) == 4)
+                    <h3 id="rating" style="text-align:center;">****</h3>
+                @endif
+
+                @if(round($user['stars']) == 5)
+                    <h3 id="rating" style="text-align:center;">*****</h3>
+                @endif
+
+Что нужно сверстать:
+
+Что нужно допридумывать ребятам:
+
+
+
+УДАЛЯЮ ИЗ ПРОФИЛЯ
+
+                <h2>Выполняются</h2>
+                @foreach($orders_in_progress as $order)
+                    @foreach( $users as $user_isp)
+                        @if($user_isp->id == $order->IspID)
+                        <div class="alert-info">
+                            <h3>{{$order->name}}</h3>
+                            <h3>{{$user_isp->email}}</h3>
+
+
+                        </div>
+
+                            @endif
+                        @endforeach
+                    @endforeach
+
+
+
+
+                @foreach($orders_requests as $order)
+                        <h2>Задача:</h2>
+                        <h3>{{$order->name}}</h3>
+                        <h2>Заявки: </h2>
+
+                    @foreach($requests as $request)
+                            @foreach($users as $user_isp)
+
+                            @if($user_isp->id == $request->isp_id and $request->order_id == $order->id)
+
+
+                                    <div class="alert alert-info">
+
+
+                                        <h3>{{$user_isp->nickname}}</h3>
+                                        <h3>{{$user_isp->email}}</h3>
+
+                                        <form method="POST" action="{{ route('user.button_order_choose') }}">
+                                            @csrf
+                                            <input type="hidden" class="form-control" name="isp_id" autocomplete="off" value="{{$user_isp->id}}">
+                                            <input type="hidden" class="form-control" name="zakaz_id" autocomplete="off" value="{{$user->id}}">
+                                            <input type="hidden" class="form-control" name="request_id" autocomplete="off" value="{{$request->id}}">
+                                            <input type="hidden" class="form-control" name="order_id" autocomplete="off" value="{{$order->id}}">
+
+
+                                            <button type="submit" class="btn btn-primary" name="sendMe" value="1">Выбрать исполнителя</button>
+                                        </form>
+
+                                    </div>
+
+                                                    @break
+                                                @endif
+                                            @endforeach
+                    @endforeach
+                    <br>
+                    @endforeach
+
+
+
+
+                    @foreach($orders_done as $order)
+                        <h2>{{$order->name}} Закончен</h2>
+
+                    @endforeach
+
+
+                @endif
+
+
+
+                ПХП
+                    $users = DB::select('select * from users');
+
+
+                    if ($user['role'] == 'Zakaz')
+                    {
+                        $orders_requests = DB::select('select * from orders where Zakaz_ID = ? and status = 0', [Auth::id()]);
+                        $orders_in_progress = DB::select('select * from orders where Zakaz_ID = ? and status = 1',[Auth::id()]);
+                        $orders_done = DB::select('select * from orders where Zakaz_ID = ? and status = 2', [Auth::id()]);
+
+                        $requests = DB::select('select * from orders_requests where zakaz_id = ? and accepted = 0', [Auth::id()]);
+
+                    }
+                    else
+                        {
+                        $orders = DB::select('select * from orders where IspID = ?', [Auth::id()]);
+                    }
+

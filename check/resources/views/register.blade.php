@@ -47,7 +47,7 @@
 
         <div class="form-group">
             <label for="email">Электронная почта</label>
-            <input type="email" class="form-control" id="email" name="email" value="" placeholder="E-mail">
+            <input type="email" class="form-control" id="email" name="email" autocomplete="off" value="" placeholder="E-mail">
             @error('email')
             <div class="alert alert alert-danger"> {{ $message }}</div>
             @enderror
@@ -61,7 +61,16 @@
       @enderror
   </div>
 
+    <div class="alert-danger">
+        @foreach ($errors->all() as $error)
+            <li style="padding-top: 10px; padding-bottom: 10px;">{{ $error }}</li>
+        @endforeach
+    </div>
+
+
 
   <button type="submit" class="btn btn-light" style="background-color:#ceffff; text-align: center; border: 1px solid #000;" name="sendMe" value="1">Создать</button>
 </form>
+
+
 @endsection

@@ -27,11 +27,11 @@ class RegisterController extends Controller
                 'direction' => 'required'
             ]);
 
-        //dd($request);
+        dd('kek');
         if(User::where('email', $validateFields['email'])->exists())
         {
-            redirect()->to(route('user.register'))->withErrors([
-                'formError' => 'Такой пользователь уже существует']);
+            return redirect()->to(route('user.register'))->withErrors([
+                'email' => 'Такой email уже используется']);
         }
 
 
@@ -47,15 +47,16 @@ class RegisterController extends Controller
             'rating' => 0
             ]);
             //$validateFields);
+        $users_all = User::all();
+
 
         if ($user)
         {
-
             Auth::login($user);
             return redirect()->to(route('user.lk'));
         }
         return redirect()->to(route('user.register'))->withErrors([
-            'formError' => 'Произошла ошибка при сохранении пользователя'
+            'email' => 'Произошла ошибка при сохранении пользователя'
         ]);
     }
 }

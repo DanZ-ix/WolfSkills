@@ -17,7 +17,7 @@
         <textarea name="review"  autocomplete="off"  rows="10" cols="45" class="form-control" aria-describedby="ContactsHelp" placeholder="Ваш отзыв"></textarea>
         </h3>
             <br>
-        <label>На сколько качественно выполнен заказ</label>
+        <label>Насколько качественно выполнен заказ</label>
         <input name="rating" value="" class="form-control" autocomplete="off"  placeholder="1-5">
         <input name="order_id" type="hidden" value="{{$data}}" class="form-control" autocomplete="off"  placeholder="1-5">
         <br>
