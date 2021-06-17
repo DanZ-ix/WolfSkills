@@ -55,15 +55,13 @@ class OrderController extends Controller
 
     public function GetOrders()
     {
-        $Orders = Order::all();
+        $Orders = DB::select('select * from orders');
         return view('order_list', ['data' => $Orders]);
-
     }
 
     public function GetOrdersNapr($napr)
     {
         $Orders = DB::select('select * from orders where napravlenie=?', [$napr]);
-        //dd($Orders);
         return view('order_list_napr', ['data' => $Orders]);
 
     }

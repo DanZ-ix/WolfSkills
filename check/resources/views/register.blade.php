@@ -72,5 +72,7 @@
   <button type="submit" class="btn btn-light" style="background-color:#ceffff; text-align: center; border: 1px solid #000;" name="sendMe" value="1">Создать</button>
 </form>
 
-
+<br>
+    <h1></h1>
+    <br>
 @endsection

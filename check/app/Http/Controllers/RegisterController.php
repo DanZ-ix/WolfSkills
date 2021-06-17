@@ -27,7 +27,7 @@ class RegisterController extends Controller
                 'direction' => 'required'
             ]);
 
-        dd('kek');
+
         if(User::where('email', $validateFields['email'])->exists())
         {
             return redirect()->to(route('user.register'))->withErrors([
@@ -47,7 +47,6 @@ class RegisterController extends Controller
             'rating' => 0
             ]);
             //$validateFields);
-        $users_all = User::all();
 
 
         if ($user)

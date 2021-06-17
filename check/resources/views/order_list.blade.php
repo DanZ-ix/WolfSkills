@@ -24,6 +24,7 @@
     @if($data==null)
         <h1 style="text-align: center">Заказов пока нет</h1>
     @endif
+
     @foreach($data as $elem)
         <div class="alert alert-info">
             <div class="row">

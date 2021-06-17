@@ -46,7 +46,9 @@
     <img src="content\images\profiles\14_1.png" width="50" height="60" style="text-align: center;">
     <a href = "{{route('RulesFile')}}" style="text-align: center;">Скачать правила</a>
 </div>
-
+<br>
+    <h1></h1>
+    <br>
 
 
 

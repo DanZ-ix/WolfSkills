@@ -19,7 +19,7 @@ class UserTable extends Migration
             $table->string('email', 255)->nullable(false)->unique('email');
             $table->string('password', 255)->nullable(false);
             $table->string('remember_token', 100)->nullable(true);
-            $table->string('nickname', 25)->nullable(false);
+            $table->string('nickname', 255)->nullable(false);
             $table->string('role', 20)->nullable(false);
             $table->string('city', 256)->nullable(false);
             $table->string('uni', 256)->nullable(false);

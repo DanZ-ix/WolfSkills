@@ -22,9 +22,11 @@
         </div>
     </div>
     <br>
+
     @if($data==null)
         <h1 style="text-align: center">Заказов пока нет</h1>
     @endif
+
     @foreach($data as $elem)
         <div class="alert alert-info">
             <h3>{{$elem->name}}</h3>
